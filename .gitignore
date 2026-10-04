@@ -31,7 +31,7 @@ Thumbs.db
 data/raw/
 data/import-summary.json
 data/divar-audit.json
-screenshots/
+/screenshots/
 *_work/
 qa-artifacts/
 playwright-report/

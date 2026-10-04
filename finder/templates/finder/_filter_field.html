@@ -1,0 +1,3 @@
+<div class="advanced-field {% if field.field.widget.input_type == 'checkbox' and not field.field.widget.allow_multiple_selected %}advanced-check{% endif %}" {% if field.name == 'construction_year_min' %}data-custom-age{% endif %}>
+{% if field.field.widget.input_type == 'checkbox' and not field.field.widget.allow_multiple_selected %}{{ field }}<label for="{{ field.id_for_label }}">{{ field.label }}</label>{% else %}<label id="{{ field.auto_id }}_label" for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% endif %}
+{% if field.help_text %}<small id="{{ field.auto_id }}_help" class="muted">{{ field.help_text }}</small>{% endif %}{{ field.errors }}</div>

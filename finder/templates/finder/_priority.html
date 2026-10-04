@@ -1,0 +1,1 @@
+<label class="priority-control"><span>{{ name }}</span><select name="{{ key }}">{% for value, label in priorities %}<option value="{{ value }}" {% if current == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>

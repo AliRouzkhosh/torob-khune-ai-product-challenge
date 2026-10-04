@@ -1,0 +1,4749 @@
+[
+  {
+    "key": "abdol-abad",
+    "display_fa": "عبدال‌آباد",
+    "aliases": [
+      "abdol-abad",
+      "عبدال‌آباد"
+    ],
+    "source_labels": [
+      "abdol-abad"
+    ],
+    "anchor": [
+      35.62828063964844,
+      51.36549758911133
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "aboozar",
+    "display_fa": "ابوذر",
+    "aliases": [
+      "aboozar",
+      "ابوذر"
+    ],
+    "source_labels": [
+      "aboozar"
+    ],
+    "anchor": [
+      35.730255126953125,
+      51.33051681518555
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "abouzar",
+    "display_fa": "ابوذر",
+    "aliases": [
+      "abouzar",
+      "ابوذر"
+    ],
+    "source_labels": [
+      "abouzar"
+    ],
+    "anchor": [
+      35.655784606933594,
+      51.47911071777344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "abshar-tehran",
+    "display_fa": "آبشار تهران",
+    "aliases": [
+      "abshar-tehran",
+      "آبشار تهران"
+    ],
+    "source_labels": [
+      "abshar-tehran"
+    ],
+    "anchor": [
+      35.758506774902344,
+      51.22097587585449
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "afsariyeh",
+    "display_fa": "افسریه",
+    "aliases": [
+      "afsariyeh",
+      "افسریه"
+    ],
+    "source_labels": [
+      "afsariyeh"
+    ],
+    "anchor": [
+      35.64845085144043,
+      51.49220657348633
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "aghdasieh",
+    "display_fa": "اقدسیه",
+    "aliases": [
+      "aghdasieh",
+      "اقدسیه"
+    ],
+    "source_labels": [
+      "aghdasieh"
+    ],
+    "anchor": [
+      35.805294036865234,
+      51.47622680664063
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ahang",
+    "display_fa": "آهنگ",
+    "aliases": [
+      "ahang",
+      "آهنگ"
+    ],
+    "source_labels": [
+      "ahang"
+    ],
+    "anchor": [
+      35.66705322265625,
+      51.4698600769043
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ajoodanieh",
+    "display_fa": "آجودانیه",
+    "aliases": [
+      "ajoodanieh",
+      "آجودانیه"
+    ],
+    "source_labels": [
+      "ajoodanieh"
+    ],
+    "anchor": [
+      35.80854415893555,
+      51.48373031616211
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "almahdi",
+    "display_fa": "المهدی",
+    "aliases": [
+      "almahdi",
+      "المهدی"
+    ],
+    "source_labels": [
+      "almahdi"
+    ],
+    "anchor": [
+      35.77165603637695,
+      51.32961654663086
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "amaniyeh",
+    "display_fa": "امانیه",
+    "aliases": [
+      "amaniyeh",
+      "امانیه"
+    ],
+    "source_labels": [
+      "amaniyeh"
+    ],
+    "anchor": [
+      35.78139114379883,
+      51.420692443847656
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "amir-bahador",
+    "display_fa": "امیر بهادر",
+    "aliases": [
+      "amir-bahador",
+      "امیر بهادر"
+    ],
+    "source_labels": [
+      "amir-bahador"
+    ],
+    "anchor": [
+      35.671661376953125,
+      51.39962768554688
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "amiriyeh",
+    "display_fa": "امیریه",
+    "aliases": [
+      "amiriyeh",
+      "امیریه"
+    ],
+    "source_labels": [
+      "amiriyeh"
+    ],
+    "anchor": [
+      35.67978286743164,
+      51.4015998840332
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "andisheh",
+    "display_fa": "اندیشه",
+    "aliases": [
+      "andisheh",
+      "اندیشه"
+    ],
+    "source_labels": [
+      "andisheh"
+    ],
+    "anchor": [
+      35.745323181152344,
+      51.28306579589844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "araj",
+    "display_fa": "اراج",
+    "aliases": [
+      "araj",
+      "اراج"
+    ],
+    "source_labels": [
+      "araj"
+    ],
+    "anchor": [
+      35.792930603027344,
+      51.48785400390625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "aramaneh",
+    "display_fa": "ارامنه",
+    "aliases": [
+      "aramaneh",
+      "ارامنه"
+    ],
+    "source_labels": [
+      "aramaneh"
+    ],
+    "anchor": [
+      35.71968078613281,
+      51.460208892822266
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ararat",
+    "display_fa": "آرارات",
+    "aliases": [
+      "ararat",
+      "آرارات"
+    ],
+    "source_labels": [
+      "ararat"
+    ],
+    "anchor": [
+      35.770545959472656,
+      51.39768981933594
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "aref",
+    "display_fa": "عارف",
+    "aliases": [
+      "aref",
+      "عارف"
+    ],
+    "source_labels": [
+      "aref"
+    ],
+    "anchor": [
+      35.670162200927734,
+      51.45639991760254
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "arjantin",
+    "display_fa": "آرژانتین",
+    "aliases": [
+      "arjantin",
+      "آرژانتین"
+    ],
+    "source_labels": [
+      "arjantin"
+    ],
+    "anchor": null,
+    "classification": "mapped"
+  },
+  {
+    "key": "aseman",
+    "display_fa": "آسمان",
+    "aliases": [
+      "aseman",
+      "آسمان"
+    ],
+    "source_labels": [
+      "aseman"
+    ],
+    "anchor": [
+      35.78033447265625,
+      51.35597229003906
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ashtiyani",
+    "display_fa": "آشتیانی",
+    "aliases": [
+      "ashtiyani",
+      "آشتیانی"
+    ],
+    "source_labels": [
+      "ashtiyani"
+    ],
+    "anchor": [
+      35.714599609375,
+      51.50428009033203
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "atabak",
+    "display_fa": "اتابک",
+    "aliases": [
+      "atabak",
+      "اتابک"
+    ],
+    "source_labels": [
+      "atabak"
+    ],
+    "anchor": [
+      35.65104103088379,
+      51.462188720703125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "azad-shahr",
+    "display_fa": "آزادشهر",
+    "aliases": [
+      "azad-shahr",
+      "آزادشهر"
+    ],
+    "source_labels": [
+      "azad-shahr"
+    ],
+    "anchor": [
+      35.75373077392578,
+      51.1644287109375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "azadi-sport-complex",
+    "display_fa": "مجموعه ورزشی آزادی",
+    "aliases": [
+      "azadi-sport-complex",
+      "مجموعه ورزشی آزادی"
+    ],
+    "source_labels": [
+      "azadi-sport-complex"
+    ],
+    "anchor": [
+      35.73731803894043,
+      51.261436462402344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "azarbaijan",
+    "display_fa": "آذربایجان",
+    "aliases": [
+      "azarbaijan",
+      "آذربایجان"
+    ],
+    "source_labels": [
+      "azarbaijan"
+    ],
+    "anchor": [
+      35.69864082336426,
+      51.37014961242676
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "azari",
+    "display_fa": "آذری",
+    "aliases": [
+      "azari",
+      "آذری"
+    ],
+    "source_labels": [
+      "azari"
+    ],
+    "anchor": [
+      35.66659736633301,
+      51.356136322021484
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bagh-ferdows",
+    "display_fa": "باغ فردوس",
+    "aliases": [
+      "bagh-ferdows",
+      "باغ فردوس"
+    ],
+    "source_labels": [
+      "bagh-ferdows"
+    ],
+    "anchor": [
+      35.80379867553711,
+      51.42364501953125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bagh-feyz",
+    "display_fa": "باغ فیض",
+    "aliases": [
+      "bagh-feyz",
+      "باغ فیض"
+    ],
+    "source_labels": [
+      "bagh-feyz"
+    ],
+    "anchor": [
+      35.7427864074707,
+      51.32426071166992
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bagh-khazaneh",
+    "display_fa": "باغ خزانه",
+    "aliases": [
+      "bagh-khazaneh",
+      "باغ خزانه"
+    ],
+    "source_labels": [
+      "bagh-khazaneh"
+    ],
+    "anchor": [
+      35.661556243896484,
+      51.37547492980957
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bahar",
+    "display_fa": "بهار",
+    "aliases": [
+      "bahar",
+      "بهار"
+    ],
+    "source_labels": [
+      "bahar"
+    ],
+    "anchor": [
+      35.71388626098633,
+      51.43210983276367
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "baharan",
+    "display_fa": "بهاران",
+    "aliases": [
+      "baharan",
+      "بهاران"
+    ],
+    "source_labels": [
+      "baharan"
+    ],
+    "anchor": [
+      35.76764297485352,
+      51.27347183227539
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bahman-yar",
+    "display_fa": "بهمن‌یار",
+    "aliases": [
+      "bahman-yar",
+      "بهمن‌یار"
+    ],
+    "source_labels": [
+      "bahman-yar"
+    ],
+    "anchor": [
+      35.627201080322266,
+      51.39735794067383
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "baqerkhan",
+    "display_fa": "باقرخان",
+    "aliases": [
+      "baqerkhan",
+      "باقرخان"
+    ],
+    "source_labels": [
+      "baqerkhan"
+    ],
+    "anchor": [
+      35.71674919128418,
+      51.375478744506836
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "behdasht",
+    "display_fa": "بهداشت",
+    "aliases": [
+      "behdasht",
+      "بهداشت"
+    ],
+    "source_labels": [
+      "behdasht"
+    ],
+    "anchor": [
+      35.65537643432617,
+      51.337127685546875
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "beryanak",
+    "display_fa": "بریانک",
+    "aliases": [
+      "beryanak",
+      "بریانک"
+    ],
+    "source_labels": [
+      "beryanak"
+    ],
+    "anchor": [
+      35.67518615722656,
+      51.37628173828125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bolursazi",
+    "display_fa": "بلورسازی",
+    "aliases": [
+      "bolursazi",
+      "بلورسازی"
+    ],
+    "source_labels": [
+      "bolursazi"
+    ],
+    "anchor": [
+      35.66224670410156,
+      51.37900352478027
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "bolvar-e-keshavarz",
+    "display_fa": "بلوار کشاورز",
+    "aliases": [
+      "bolvar-e-keshavarz",
+      "بلوار کشاورز"
+    ],
+    "source_labels": [
+      "bolvar-e-keshavarz"
+    ],
+    "anchor": [
+      35.710954666137695,
+      51.40226364135742
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "central-janat-abad",
+    "display_fa": "جنت‌آباد مرکزی",
+    "aliases": [
+      "central-janat-abad",
+      "جنت‌آباد مرکزی"
+    ],
+    "source_labels": [
+      "central-janat-abad"
+    ],
+    "anchor": [
+      35.76008224487305,
+      51.30441665649414
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "charsad-dastgah",
+    "display_fa": "چهارصد دستگاه",
+    "aliases": [
+      "charsad-dastgah",
+      "چهارصد دستگاه"
+    ],
+    "source_labels": [
+      "charsad-dastgah"
+    ],
+    "anchor": [
+      35.686893463134766,
+      51.463985443115234
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "chitgar",
+    "display_fa": "چیتگر",
+    "aliases": [
+      "chitgar",
+      "چیتگر"
+    ],
+    "source_labels": [
+      "chitgar"
+    ],
+    "anchor": [
+      35.72502899169922,
+      51.183860778808594
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "chitgar-lake",
+    "display_fa": "دریاچه چیتگر",
+    "aliases": [
+      "chitgar-lake",
+      "دریاچه چیتگر"
+    ],
+    "source_labels": [
+      "chitgar-lake"
+    ],
+    "anchor": [
+      35.752336502075195,
+      51.208187103271484
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "chizar",
+    "display_fa": "چیذر",
+    "aliases": [
+      "chizar",
+      "چیذر"
+    ],
+    "source_labels": [
+      "chizar"
+    ],
+    "anchor": [
+      35.797420501708984,
+      51.45663070678711
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dabestan",
+    "display_fa": "دبستان",
+    "aliases": [
+      "dabestan",
+      "دبستان"
+    ],
+    "source_labels": [
+      "dabestan"
+    ],
+    "anchor": [
+      35.73725891113281,
+      51.45930480957031
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "darabad",
+    "display_fa": "دارآباد",
+    "aliases": [
+      "darabad",
+      "دارآباد"
+    ],
+    "source_labels": [
+      "darabad"
+    ],
+    "anchor": [
+      35.81537628173828,
+      51.4908447265625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "darakeh",
+    "display_fa": "درکه",
+    "aliases": [
+      "darakeh",
+      "درکه"
+    ],
+    "source_labels": [
+      "darakeh"
+    ],
+    "anchor": null,
+    "classification": "mapped"
+  },
+  {
+    "key": "darb-dowom",
+    "display_fa": "درب دوم",
+    "aliases": [
+      "darb-dowom",
+      "درب دوم"
+    ],
+    "source_labels": [
+      "darb-dowom"
+    ],
+    "anchor": [
+      35.782453536987305,
+      51.44540214538574
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "darband",
+    "display_fa": "دربند",
+    "aliases": [
+      "darband",
+      "دربند"
+    ],
+    "source_labels": [
+      "darband"
+    ],
+    "anchor": [
+      35.815555572509766,
+      51.43076515197754
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dardasht",
+    "display_fa": "دردشت",
+    "aliases": [
+      "dardasht",
+      "دردشت"
+    ],
+    "source_labels": [
+      "dardasht"
+    ],
+    "anchor": [
+      35.72847366333008,
+      51.50379753112793
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "darvazeh-shemiran",
+    "display_fa": "دروازه شمیران",
+    "aliases": [
+      "darvazeh-shemiran",
+      "دروازه شمیران"
+    ],
+    "source_labels": [
+      "darvazeh-shemiran"
+    ],
+    "anchor": [
+      35.698184967041016,
+      51.440948486328125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "darya",
+    "display_fa": "دریا",
+    "aliases": [
+      "darya",
+      "دریا"
+    ],
+    "source_labels": [
+      "darya"
+    ],
+    "anchor": [
+      35.76985549926758,
+      51.37325859069824
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "daryan-no",
+    "display_fa": "دریان نو",
+    "aliases": [
+      "daryan-no",
+      "دریان نو"
+    ],
+    "source_labels": [
+      "daryan-no"
+    ],
+    "anchor": [
+      35.714630126953125,
+      51.35901641845703
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dehkade-olympic",
+    "display_fa": "دهکده المپیک",
+    "aliases": [
+      "dehkade-olympic",
+      "دهکده المپیک"
+    ],
+    "source_labels": [
+      "dehkade-olympic"
+    ],
+    "anchor": [
+      35.7583065032959,
+      51.257062911987305
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dehqan",
+    "display_fa": "دهقان",
+    "aliases": [
+      "dehqan",
+      "دهقان"
+    ],
+    "source_labels": [
+      "dehqan"
+    ],
+    "anchor": [
+      35.696664810180664,
+      51.47670364379883
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dezashib",
+    "display_fa": "دزاشیب",
+    "aliases": [
+      "dezashib",
+      "دزاشیب"
+    ],
+    "source_labels": [
+      "dezashib"
+    ],
+    "anchor": [
+      35.80941390991211,
+      51.4479923248291
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dolat-abad",
+    "display_fa": "دولت‌آباد",
+    "aliases": [
+      "dolat-abad",
+      "دولت‌آباد"
+    ],
+    "source_labels": [
+      "dolat-abad"
+    ],
+    "anchor": [
+      35.618587493896484,
+      51.45234298706055
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dolatkhah",
+    "display_fa": "دولتخواه",
+    "aliases": [
+      "dolatkhah",
+      "دولتخواه"
+    ],
+    "source_labels": [
+      "dolatkhah"
+    ],
+    "anchor": [
+      35.616172790527344,
+      51.342655181884766
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "doolab",
+    "display_fa": "دولاب",
+    "aliases": [
+      "doolab",
+      "دولاب"
+    ],
+    "source_labels": [
+      "doolab"
+    ],
+    "anchor": [
+      35.662532806396484,
+      51.45790100097656
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "dr-hoshyar",
+    "display_fa": "دکتر هوشیار",
+    "aliases": [
+      "dr-hoshyar",
+      "دکتر هوشیار"
+    ],
+    "source_labels": [
+      "dr-hoshyar"
+    ],
+    "anchor": [
+      35.69313430786133,
+      51.35015487670898
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "east-shareq",
+    "display_fa": "east-shareq",
+    "aliases": [
+      "east-shareq"
+    ],
+    "source_labels": [
+      "east-shareq"
+    ],
+    "anchor": [
+      35.71102714538574,
+      51.46257400512695
+    ],
+    "classification": "ambiguous"
+  },
+  {
+    "key": "east-tehranpars",
+    "display_fa": "تهرانپارس شرقی",
+    "aliases": [
+      "east-tehranpars",
+      "تهرانپارس شرقی"
+    ],
+    "source_labels": [
+      "east-tehranpars"
+    ],
+    "anchor": [
+      35.741512298583984,
+      51.54734802246094
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ebn-babevayh",
+    "display_fa": "ابن بابویه",
+    "aliases": [
+      "ebn-babevayh",
+      "ابن بابویه"
+    ],
+    "source_labels": [
+      "ebn-babevayh"
+    ],
+    "anchor": [
+      35.59773254394531,
+      51.44057846069336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ebrahim-abad",
+    "display_fa": "ابراهیم‌آباد",
+    "aliases": [
+      "ebrahim-abad",
+      "ابراهیم‌آباد"
+    ],
+    "source_labels": [
+      "ebrahim-abad"
+    ],
+    "anchor": [
+      35.6521053314209,
+      51.303340911865234
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "eivanak",
+    "display_fa": "ایوانک",
+    "aliases": [
+      "eivanak",
+      "ایوانک"
+    ],
+    "source_labels": [
+      "eivanak"
+    ],
+    "anchor": [
+      35.760597229003906,
+      51.35520935058594
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ekbatan",
+    "display_fa": "اکباتان",
+    "aliases": [
+      "ekbatan",
+      "اکباتان"
+    ],
+    "source_labels": [
+      "ekbatan"
+    ],
+    "anchor": [
+      35.70679473876953,
+      51.3066291809082
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ekhtiyariyeh",
+    "display_fa": "اختیاریه",
+    "aliases": [
+      "ekhtiyariyeh",
+      "اختیاریه"
+    ],
+    "source_labels": [
+      "ekhtiyariyeh"
+    ],
+    "anchor": [
+      35.78550148010254,
+      51.46291923522949
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "elahiyeh",
+    "display_fa": "الهیه",
+    "aliases": [
+      "elahiyeh",
+      "الهیه"
+    ],
+    "source_labels": [
+      "elahiyeh"
+    ],
+    "anchor": [
+      35.79104042053223,
+      51.42704772949219
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "elm-o-sanat",
+    "display_fa": "علم و صنعت",
+    "aliases": [
+      "elm-o-sanat",
+      "علم و صنعت"
+    ],
+    "source_labels": [
+      "elm-o-sanat"
+    ],
+    "anchor": [
+      35.740020751953125,
+      51.515132904052734
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "emam-hossein",
+    "display_fa": "امام حسین",
+    "aliases": [
+      "emam-hossein",
+      "امام حسین"
+    ],
+    "source_labels": [
+      "emam-hossein"
+    ],
+    "anchor": [
+      35.70184326171875,
+      51.4555778503418
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "emamzade-ghasem",
+    "display_fa": "امامزاده قاسم",
+    "aliases": [
+      "emamzade-ghasem",
+      "امامزاده قاسم"
+    ],
+    "source_labels": [
+      "emamzade-ghasem"
+    ],
+    "anchor": [
+      35.81145477294922,
+      51.44269943237305
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "enqelab",
+    "display_fa": "انقلاب",
+    "aliases": [
+      "enqelab",
+      "انقلاب"
+    ],
+    "source_labels": [
+      "enqelab"
+    ],
+    "anchor": [
+      35.701881408691406,
+      51.39778518676758
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "eram",
+    "display_fa": "ارم",
+    "aliases": [
+      "eram",
+      "ارم"
+    ],
+    "source_labels": [
+      "eram"
+    ],
+    "anchor": [
+      35.7308464050293,
+      51.29143142700195
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "esfandyari",
+    "display_fa": "اسفندیاری",
+    "aliases": [
+      "esfandyari",
+      "اسفندیاری"
+    ],
+    "source_labels": [
+      "esfandyari"
+    ],
+    "anchor": [
+      35.63375282287598,
+      51.386146545410156
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "eshrat-abad",
+    "display_fa": "عشرت‌آباد",
+    "aliases": [
+      "eshrat-abad",
+      "عشرت‌آباد"
+    ],
+    "source_labels": [
+      "eshrat-abad"
+    ],
+    "anchor": [
+      35.70510482788086,
+      51.4347038269043
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "eskandari",
+    "display_fa": "اسکندری",
+    "aliases": [
+      "eskandari",
+      "اسکندری"
+    ],
+    "source_labels": [
+      "eskandari"
+    ],
+    "anchor": [
+      35.688846588134766,
+      51.381797790527344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "eslam-abad",
+    "display_fa": "اسلام‌آباد",
+    "aliases": [
+      "eslam-abad",
+      "اسلام‌آباد"
+    ],
+    "source_labels": [
+      "eslam-abad"
+    ],
+    "anchor": [
+      35.640384674072266,
+      51.333091735839844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "estakhr",
+    "display_fa": "استخر",
+    "aliases": [
+      "estakhr",
+      "استخر"
+    ],
+    "source_labels": [
+      "estakhr"
+    ],
+    "anchor": [
+      35.75526237487793,
+      51.55586624145508
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "evin",
+    "display_fa": "اوین",
+    "aliases": [
+      "evin",
+      "اوین"
+    ],
+    "source_labels": [
+      "evin"
+    ],
+    "anchor": [
+      35.79482650756836,
+      51.392051696777344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "fadak",
+    "display_fa": "فدک",
+    "aliases": [
+      "fadak",
+      "فدک"
+    ],
+    "source_labels": [
+      "fadak"
+    ],
+    "anchor": [
+      35.72716522216797,
+      51.48105239868164
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "fallah",
+    "display_fa": "فلاح",
+    "aliases": [
+      "fallah",
+      "فلاح"
+    ],
+    "source_labels": [
+      "fallah"
+    ],
+    "anchor": [
+      35.65763473510742,
+      51.36288070678711
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "farah-abad",
+    "display_fa": "فرح‌آباد",
+    "aliases": [
+      "farah-abad",
+      "فرح‌آباد"
+    ],
+    "source_labels": [
+      "farah-abad"
+    ],
+    "anchor": [
+      35.67853927612305,
+      51.48296737670898
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "farahzad",
+    "display_fa": "فرحزاد",
+    "aliases": [
+      "farahzad",
+      "فرحزاد"
+    ],
+    "source_labels": [
+      "farahzad"
+    ],
+    "anchor": [
+      35.78709030151367,
+      51.34384536743164
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "farmaniyeh",
+    "display_fa": "فرمانیه",
+    "aliases": [
+      "farmaniyeh",
+      "فرمانیه"
+    ],
+    "source_labels": [
+      "farmaniyeh"
+    ],
+    "anchor": [
+      35.79716873168945,
+      51.469839096069336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ferdowsi",
+    "display_fa": "فردوسی",
+    "aliases": [
+      "ferdowsi",
+      "فردوسی"
+    ],
+    "source_labels": [
+      "ferdowsi"
+    ],
+    "anchor": [
+      35.69622802734375,
+      51.42129898071289
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "firoozabadi",
+    "display_fa": "فیروزآبادی",
+    "aliases": [
+      "firoozabadi",
+      "فیروزآبادی"
+    ],
+    "source_labels": [
+      "firoozabadi"
+    ],
+    "anchor": [
+      35.59562301635742,
+      51.435791015625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ghanat-kosar",
+    "display_fa": "قنات کوثر",
+    "aliases": [
+      "ghanat-kosar",
+      "قنات کوثر"
+    ],
+    "source_labels": [
+      "ghanat-kosar"
+    ],
+    "anchor": [
+      35.75521469116211,
+      51.52925682067871
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "gisha",
+    "display_fa": "گیشا",
+    "aliases": [
+      "gisha",
+      "گیشا"
+    ],
+    "source_labels": [
+      "gisha"
+    ],
+    "anchor": [
+      35.73530387878418,
+      51.378787994384766
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "golab-dareh",
+    "display_fa": "گلابدره",
+    "aliases": [
+      "golab-dareh",
+      "گلابدره"
+    ],
+    "source_labels": [
+      "golab-dareh"
+    ],
+    "anchor": [
+      35.821170806884766,
+      51.43430709838867
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "golchin",
+    "display_fa": "گلچین",
+    "aliases": [
+      "golchin",
+      "گلچین"
+    ],
+    "source_labels": [
+      "golchin"
+    ],
+    "anchor": [
+      35.654884338378906,
+      51.36880874633789
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "gomrok",
+    "display_fa": "گمرک",
+    "aliases": [
+      "gomrok",
+      "گمرک"
+    ],
+    "source_labels": [
+      "gomrok"
+    ],
+    "anchor": [
+      35.66695785522461,
+      51.38998794555664
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hafezie",
+    "display_fa": "حافظیه",
+    "aliases": [
+      "hafezie",
+      "حافظیه"
+    ],
+    "source_labels": [
+      "hafezie"
+    ],
+    "anchor": [
+      35.70373725891113,
+      51.49641799926758
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "haft-hoz",
+    "display_fa": "هفت حوض",
+    "aliases": [
+      "haft-hoz",
+      "هفت حوض"
+    ],
+    "source_labels": [
+      "haft-hoz"
+    ],
+    "anchor": [
+      35.72959518432617,
+      51.48998832702637
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "haftchenar",
+    "display_fa": "هفت چنار",
+    "aliases": [
+      "haftchenar",
+      "هفت چنار"
+    ],
+    "source_labels": [
+      "haftchenar"
+    ],
+    "anchor": [
+      35.67447090148926,
+      51.36991500854492
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hamzeh-abad",
+    "display_fa": "حمزه‌آباد",
+    "aliases": [
+      "hamzeh-abad",
+      "حمزه‌آباد"
+    ],
+    "source_labels": [
+      "hamzeh-abad"
+    ],
+    "anchor": [
+      35.59992980957031,
+      51.4248046875
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hasan-abad-shomali",
+    "display_fa": "حسن‌آباد شمالی",
+    "aliases": [
+      "hasan-abad-shomali",
+      "حسن‌آباد شمالی"
+    ],
+    "source_labels": [
+      "hasan-abad-shomali"
+    ],
+    "anchor": [
+      35.73460006713867,
+      51.319175720214844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hashem-abad",
+    "display_fa": "هاشم‌آباد",
+    "aliases": [
+      "hashem-abad",
+      "هاشم‌آباد"
+    ],
+    "source_labels": [
+      "hashem-abad"
+    ],
+    "anchor": [
+      35.645822525024414,
+      51.46918296813965
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hashemi",
+    "display_fa": "هاشمی",
+    "aliases": [
+      "hashemi",
+      "هاشمی"
+    ],
+    "source_labels": [
+      "hashemi"
+    ],
+    "anchor": [
+      35.68635368347168,
+      51.35836219787598
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "havanirooz",
+    "display_fa": "هوانیروز",
+    "aliases": [
+      "havanirooz",
+      "هوانیروز"
+    ],
+    "source_labels": [
+      "havanirooz"
+    ],
+    "anchor": [
+      35.73462677001953,
+      51.2428092956543
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hekmat",
+    "display_fa": "حکمت",
+    "aliases": [
+      "hekmat",
+      "حکمت"
+    ],
+    "source_labels": [
+      "hekmat"
+    ],
+    "anchor": [
+      35.80009078979492,
+      51.44688034057617
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "heravi",
+    "display_fa": "هروی",
+    "aliases": [
+      "heravi",
+      "هروی"
+    ],
+    "source_labels": [
+      "heravi"
+    ],
+    "anchor": [
+      35.76568603515625,
+      51.476539611816406
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hesar-booali",
+    "display_fa": "حصار بوعلی",
+    "aliases": [
+      "hesar-booali",
+      "حصار بوعلی"
+    ],
+    "source_labels": [
+      "hesar-booali"
+    ],
+    "anchor": [
+      35.80356979370117,
+      51.46634292602539
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "heshamatiyeh",
+    "display_fa": "حشمتیه",
+    "aliases": [
+      "heshamatiyeh",
+      "حشمتیه"
+    ],
+    "source_labels": [
+      "heshamatiyeh"
+    ],
+    "anchor": [
+      35.7265625,
+      51.45641326904297
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hezarsang",
+    "display_fa": "هزارسنگ",
+    "aliases": [
+      "hezarsang",
+      "هزارسنگ"
+    ],
+    "source_labels": [
+      "hezarsang"
+    ],
+    "anchor": [
+      35.80544853210449,
+      51.37900733947754
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "hor-square",
+    "display_fa": "میدان حر",
+    "aliases": [
+      "hor-square",
+      "میدان حر"
+    ],
+    "source_labels": [
+      "hor-square"
+    ],
+    "anchor": [
+      35.688425064086914,
+      51.39029121398926
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "imam-sajjad",
+    "display_fa": "امام سجاد",
+    "aliases": [
+      "imam-sajjad",
+      "امام سجاد"
+    ],
+    "source_labels": [
+      "imam-sajjad"
+    ],
+    "anchor": [
+      35.65444564819336,
+      51.35601615905762
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jaberi",
+    "display_fa": "جابری",
+    "aliases": [
+      "jaberi",
+      "جابری"
+    ],
+    "source_labels": [
+      "jaberi"
+    ],
+    "anchor": [
+      35.68422317504883,
+      51.45491790771485
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jahad",
+    "display_fa": "جهاد",
+    "aliases": [
+      "jahad",
+      "جهاد"
+    ],
+    "source_labels": [
+      "jahad"
+    ],
+    "anchor": [
+      35.72635269165039,
+      51.40769958496094
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jalili",
+    "display_fa": "جلیلی",
+    "aliases": [
+      "jalili",
+      "جلیلی"
+    ],
+    "source_labels": [
+      "jalili"
+    ],
+    "anchor": [
+      35.65227127075195,
+      51.36271286010742
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jamalzadeh",
+    "display_fa": "جمالزاده",
+    "aliases": [
+      "jamalzadeh",
+      "جمالزاده"
+    ],
+    "source_labels": [
+      "jamalzadeh"
+    ],
+    "anchor": [
+      35.69526672363281,
+      51.38905334472656
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jamaran",
+    "display_fa": "جماران",
+    "aliases": [
+      "jamaran",
+      "جماران"
+    ],
+    "source_labels": [
+      "jamaran"
+    ],
+    "anchor": [
+      35.815826416015625,
+      51.45696640014648
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "javadiyeh",
+    "display_fa": "جوادیه",
+    "aliases": [
+      "javadiyeh",
+      "جوادیه"
+    ],
+    "source_labels": [
+      "javadiyeh"
+    ],
+    "anchor": [
+      35.657352447509766,
+      51.38766860961914
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "javadiyeh-tehran-pars",
+    "display_fa": "جوادیه تهرانپارس",
+    "aliases": [
+      "javadiyeh-tehran-pars",
+      "جوادیه تهرانپارس"
+    ],
+    "source_labels": [
+      "javadiyeh-tehran-pars"
+    ],
+    "anchor": [
+      35.733150482177734,
+      51.55231285095215
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "javanmard-e-ghasab",
+    "display_fa": "جوانمرد قصاب",
+    "aliases": [
+      "javanmard-e-ghasab",
+      "جوانمرد قصاب"
+    ],
+    "source_labels": [
+      "javanmard-e-ghasab"
+    ],
+    "anchor": [
+      35.61471939086914,
+      51.4279670715332
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jey",
+    "display_fa": "جی",
+    "aliases": [
+      "jey",
+      "جی"
+    ],
+    "source_labels": [
+      "jey"
+    ],
+    "anchor": [
+      35.67788314819336,
+      51.35099411010742
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jeyhoun",
+    "display_fa": "جیحون",
+    "aliases": [
+      "jeyhoun",
+      "جیحون"
+    ],
+    "source_labels": [
+      "jeyhoun"
+    ],
+    "anchor": [
+      35.68696975708008,
+      51.364559173583984
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "jomhouri",
+    "display_fa": "جمهوری",
+    "aliases": [
+      "jomhouri",
+      "جمهوری"
+    ],
+    "source_labels": [
+      "jomhouri"
+    ],
+    "anchor": [
+      35.69649124145508,
+      51.38123321533203
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kamraniyeh",
+    "display_fa": "کامرانیه",
+    "aliases": [
+      "kamraniyeh",
+      "کامرانیه"
+    ],
+    "source_labels": [
+      "kamraniyeh"
+    ],
+    "anchor": [
+      35.806453704833984,
+      51.46214294433594
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kan",
+    "display_fa": "کن",
+    "aliases": [
+      "kan",
+      "کن"
+    ],
+    "source_labels": [
+      "kan"
+    ],
+    "anchor": [
+      35.75477600097656,
+      51.286529541015625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "karevan",
+    "display_fa": "کاروان",
+    "aliases": [
+      "karevan",
+      "کاروان"
+    ],
+    "source_labels": [
+      "karevan"
+    ],
+    "anchor": [
+      35.612897872924805,
+      51.49445724487305
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "karim-abad",
+    "display_fa": "کریم‌آباد",
+    "aliases": [
+      "karim-abad",
+      "کریم‌آباد"
+    ],
+    "source_labels": [
+      "karim-abad"
+    ],
+    "anchor": [
+      35.60086441040039,
+      51.36491775512695
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kashanak",
+    "display_fa": "کاشانک",
+    "aliases": [
+      "kashanak",
+      "کاشانک"
+    ],
+    "source_labels": [
+      "kashanak"
+    ],
+    "anchor": [
+      35.8144588470459,
+      51.48126792907715
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kazem-abad",
+    "display_fa": "کاظم‌آباد",
+    "aliases": [
+      "kazem-abad",
+      "کاظم‌آباد"
+    ],
+    "source_labels": [
+      "kazem-abad"
+    ],
+    "anchor": [
+      35.747074127197266,
+      51.467044830322266
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khaje-nezam-molk",
+    "display_fa": "خواجه نظام‌الملک",
+    "aliases": [
+      "khaje-nezam-molk",
+      "خواجه نظام‌الملک"
+    ],
+    "source_labels": [
+      "khaje-nezam-molk"
+    ],
+    "anchor": [
+      35.71432685852051,
+      51.4488582611084
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khak-sefid",
+    "display_fa": "خاک سفید",
+    "aliases": [
+      "khak-sefid",
+      "خاک سفید"
+    ],
+    "source_labels": [
+      "khak-sefid"
+    ],
+    "anchor": [
+      35.74428749084473,
+      51.559682846069336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khalij-e-fars",
+    "display_fa": "خلیج فارس",
+    "aliases": [
+      "khalij-e-fars",
+      "خلیج فارس"
+    ],
+    "source_labels": [
+      "khalij-e-fars"
+    ],
+    "anchor": [
+      35.673160552978516,
+      51.26927375793457
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khani-abad",
+    "display_fa": "خانی‌آباد",
+    "aliases": [
+      "khani-abad",
+      "خانی‌آباد"
+    ],
+    "source_labels": [
+      "khani-abad"
+    ],
+    "anchor": [
+      35.66558265686035,
+      51.41048812866211
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khani-abad-no",
+    "display_fa": "خانی‌آباد نو",
+    "aliases": [
+      "khani-abad-no",
+      "خانی‌آباد نو"
+    ],
+    "source_labels": [
+      "khani-abad-no"
+    ],
+    "anchor": [
+      35.62910461425781,
+      51.38901710510254
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khavaran",
+    "display_fa": "خاوران",
+    "aliases": [
+      "khavaran",
+      "خاوران"
+    ],
+    "source_labels": [
+      "khavaran"
+    ],
+    "anchor": [
+      35.6651668548584,
+      51.45328712463379
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "khazaneh",
+    "display_fa": "خزانه",
+    "aliases": [
+      "khazaneh",
+      "خزانه"
+    ],
+    "source_labels": [
+      "khazaneh"
+    ],
+    "anchor": [
+      35.63765335083008,
+      51.42166519165039
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kooy-e-bimeh",
+    "display_fa": "کوی بیمه",
+    "aliases": [
+      "kooy-e-bimeh",
+      "کوی بیمه"
+    ],
+    "source_labels": [
+      "kooy-e-bimeh"
+    ],
+    "anchor": [
+      35.709228515625,
+      51.31585693359375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kooy-e-ferdos",
+    "display_fa": "کوی فردوس",
+    "aliases": [
+      "kooy-e-ferdos",
+      "کوی فردوس"
+    ],
+    "source_labels": [
+      "kooy-e-ferdos"
+    ],
+    "anchor": [
+      35.72242736816406,
+      51.315391540527344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kooye-e-hefdahom-e-shahrivar",
+    "display_fa": "کوی هفدهم شهریور",
+    "aliases": [
+      "kooye-e-hefdahom-e-shahrivar",
+      "کوی هفدهم شهریور"
+    ],
+    "source_labels": [
+      "kooye-e-hefdahom-e-shahrivar"
+    ],
+    "anchor": [
+      35.66582489013672,
+      51.30194854736328
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kosar",
+    "display_fa": "کوثر",
+    "aliases": [
+      "kosar",
+      "کوثر"
+    ],
+    "source_labels": [
+      "kosar"
+    ],
+    "anchor": [
+      35.66165542602539,
+      51.44330596923828
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kuhak",
+    "display_fa": "کوهک",
+    "aliases": [
+      "kuhak",
+      "کوهک"
+    ],
+    "source_labels": [
+      "kuhak"
+    ],
+    "anchor": [
+      35.72777557373047,
+      51.24250411987305
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "kuy-faraz",
+    "display_fa": "کوی فراز",
+    "aliases": [
+      "kuy-faraz",
+      "کوی فراز"
+    ],
+    "source_labels": [
+      "kuy-faraz"
+    ],
+    "anchor": [
+      35.79045486450195,
+      51.36219024658203
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "lavizan",
+    "display_fa": "لویزان",
+    "aliases": [
+      "lavizan",
+      "لویزان"
+    ],
+    "source_labels": [
+      "lavizan"
+    ],
+    "anchor": [
+      35.768558502197266,
+      51.51624298095703
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "mahmoodiyeh",
+    "display_fa": "محمودیه",
+    "aliases": [
+      "mahmoodiyeh",
+      "محمودیه"
+    ],
+    "source_labels": [
+      "mahmoodiyeh"
+    ],
+    "anchor": [
+      35.795291900634766,
+      51.41100311279297
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "majid-abad",
+    "display_fa": "مجیدآباد",
+    "aliases": [
+      "majid-abad",
+      "مجیدآباد"
+    ],
+    "source_labels": [
+      "majid-abad"
+    ],
+    "anchor": [
+      35.751224517822266,
+      51.545854568481445
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "majidiyeh",
+    "display_fa": "مجیدیه",
+    "aliases": [
+      "majidiyeh",
+      "مجیدیه"
+    ],
+    "source_labels": [
+      "majidiyeh"
+    ],
+    "anchor": [
+      35.73356246948242,
+      51.46439743041992
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "makhsous",
+    "display_fa": "مخصوص",
+    "aliases": [
+      "makhsous",
+      "مخصوص"
+    ],
+    "source_labels": [
+      "makhsous"
+    ],
+    "anchor": [
+      35.6767463684082,
+      51.38747024536133
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "mansouriyeh",
+    "display_fa": "منصوریه",
+    "aliases": [
+      "mansouriyeh",
+      "منصوریه"
+    ],
+    "source_labels": [
+      "mansouriyeh"
+    ],
+    "anchor": [
+      35.60927963256836,
+      51.434682846069336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "marzdaran",
+    "display_fa": "مرزداران",
+    "aliases": [
+      "marzdaran",
+      "مرزداران"
+    ],
+    "source_labels": [
+      "marzdaran"
+    ],
+    "anchor": [
+      35.734004974365234,
+      51.34060287475586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "masoudieh",
+    "display_fa": "مسعودیه",
+    "aliases": [
+      "masoudieh",
+      "مسعودیه"
+    ],
+    "source_labels": [
+      "masoudieh"
+    ],
+    "anchor": [
+      35.6321907043457,
+      51.49376678466797
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "minabi",
+    "display_fa": "مینابی",
+    "aliases": [
+      "minabi",
+      "مینابی"
+    ],
+    "source_labels": [
+      "minabi"
+    ],
+    "anchor": [
+      35.64906692504883,
+      51.45489501953125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "mobarak-abad-e-beheshti",
+    "display_fa": "مبارک‌آباد بهشتی",
+    "aliases": [
+      "mobarak-abad-e-beheshti",
+      "مبارک‌آباد بهشتی"
+    ],
+    "source_labels": [
+      "mobarak-abad-e-beheshti"
+    ],
+    "anchor": [
+      35.580020904541016,
+      51.4199104309082
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "molavi",
+    "display_fa": "مولوی",
+    "aliases": [
+      "molavi",
+      "مولوی"
+    ],
+    "source_labels": [
+      "molavi"
+    ],
+    "anchor": [
+      35.66755294799805,
+      51.42036437988281
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "moniriyeh",
+    "display_fa": "منیریه",
+    "aliases": [
+      "moniriyeh",
+      "منیریه"
+    ],
+    "source_labels": [
+      "moniriyeh"
+    ],
+    "anchor": [
+      35.68389892578125,
+      51.40288162231445
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "moqadam",
+    "display_fa": "مقدم",
+    "aliases": [
+      "moqadam",
+      "مقدم"
+    ],
+    "source_labels": [
+      "moqadam"
+    ],
+    "anchor": [
+      35.65868377685547,
+      51.372859954833984
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "morad-abad",
+    "display_fa": "مرادآباد",
+    "aliases": [
+      "morad-abad",
+      "مرادآباد"
+    ],
+    "source_labels": [
+      "morad-abad"
+    ],
+    "anchor": [
+      35.78807067871094,
+      51.33257865905762
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "moshiriyeh",
+    "display_fa": "مشیریه",
+    "aliases": [
+      "moshiriyeh",
+      "مشیریه"
+    ],
+    "source_labels": [
+      "moshiriyeh"
+    ],
+    "anchor": [
+      35.6207275390625,
+      51.48633193969727
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nabi-akram",
+    "display_fa": "نبی اکرم",
+    "aliases": [
+      "nabi-akram",
+      "نبی اکرم"
+    ],
+    "source_labels": [
+      "nabi-akram"
+    ],
+    "anchor": [
+      35.67963409423828,
+      51.4763298034668
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "narmak",
+    "display_fa": "نارمک",
+    "aliases": [
+      "narmak",
+      "نارمک"
+    ],
+    "source_labels": [
+      "narmak"
+    ],
+    "anchor": [
+      35.736263275146484,
+      51.49999237060547
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nazi-abad",
+    "display_fa": "نازی‌آباد",
+    "aliases": [
+      "nazi-abad",
+      "نازی‌آباد"
+    ],
+    "source_labels": [
+      "nazi-abad"
+    ],
+    "anchor": [
+      35.63723945617676,
+      51.40621376037598
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nejatollahi",
+    "display_fa": "نجات‌اللهی",
+    "aliases": [
+      "nejatollahi",
+      "نجات‌اللهی"
+    ],
+    "source_labels": [
+      "nejatollahi"
+    ],
+    "anchor": [
+      35.70421600341797,
+      51.4166145324707
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nemat-abad",
+    "display_fa": "نعمت‌آباد",
+    "aliases": [
+      "nemat-abad",
+      "نعمت‌آباد"
+    ],
+    "source_labels": [
+      "nemat-abad"
+    ],
+    "anchor": [
+      35.630821228027344,
+      51.35422897338867
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nezam-abad",
+    "display_fa": "نظام‌آباد",
+    "aliases": [
+      "nezam-abad",
+      "نظام‌آباد"
+    ],
+    "source_labels": [
+      "nezam-abad"
+    ],
+    "anchor": [
+      35.70749282836914,
+      51.456146240234375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "niavaran",
+    "display_fa": "نیاوران",
+    "aliases": [
+      "niavaran",
+      "نیاوران"
+    ],
+    "source_labels": [
+      "niavaran"
+    ],
+    "anchor": [
+      35.815778732299805,
+      51.46941184997559
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "niloufar",
+    "display_fa": "نیلوفر",
+    "aliases": [
+      "niloufar",
+      "نیلوفر"
+    ],
+    "source_labels": [
+      "niloufar"
+    ],
+    "anchor": [
+      35.73366165161133,
+      51.438594818115234
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "niroo-havayi",
+    "display_fa": "نیروی هوایی",
+    "aliases": [
+      "niroo-havayi",
+      "نیروی هوایی"
+    ],
+    "source_labels": [
+      "niroo-havayi"
+    ],
+    "anchor": [
+      35.699045181274414,
+      51.48080253601074
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "north-janat-abad",
+    "display_fa": "جنت‌آباد شمالی",
+    "aliases": [
+      "north-janat-abad",
+      "جنت‌آباد شمالی"
+    ],
+    "source_labels": [
+      "north-janat-abad"
+    ],
+    "anchor": [
+      35.771141052246094,
+      51.305397033691406
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "north-karegar",
+    "display_fa": "کارگر شمالی",
+    "aliases": [
+      "north-karegar",
+      "کارگر شمالی"
+    ],
+    "source_labels": [
+      "north-karegar"
+    ],
+    "anchor": [
+      35.71739959716797,
+      51.39101791381836
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "north-shahran",
+    "display_fa": "شهران شمالی",
+    "aliases": [
+      "north-shahran",
+      "شهران شمالی"
+    ],
+    "source_labels": [
+      "north-shahran"
+    ],
+    "anchor": [
+      35.766117095947266,
+      51.28863334655762
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "north-sohrevardi",
+    "display_fa": "سهروردی شمالی",
+    "aliases": [
+      "north-sohrevardi",
+      "سهروردی شمالی"
+    ],
+    "source_labels": [
+      "north-sohrevardi"
+    ],
+    "anchor": [
+      35.721323013305664,
+      51.43486213684082
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "nosrat",
+    "display_fa": "نصرت",
+    "aliases": [
+      "nosrat",
+      "نصرت"
+    ],
+    "source_labels": [
+      "nosrat"
+    ],
+    "anchor": [
+      35.70455551147461,
+      51.38677978515625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "oghaf",
+    "display_fa": "اوقاف",
+    "aliases": [
+      "oghaf",
+      "اوقاف"
+    ],
+    "source_labels": [
+      "oghaf"
+    ],
+    "anchor": [
+      35.74977493286133,
+      51.51248550415039
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ostad-moein",
+    "display_fa": "استاد معین",
+    "aliases": [
+      "ostad-moein",
+      "استاد معین"
+    ],
+    "source_labels": [
+      "ostad-moein"
+    ],
+    "anchor": [
+      35.69216346740723,
+      51.34280014038086
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "ozgol",
+    "display_fa": "ازگل",
+    "aliases": [
+      "ozgol",
+      "ازگل"
+    ],
+    "source_labels": [
+      "ozgol"
+    ],
+    "anchor": [
+      35.791107177734375,
+      51.49414825439453
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "pamenar",
+    "display_fa": "پامنار",
+    "aliases": [
+      "pamenar",
+      "پامنار"
+    ],
+    "source_labels": [
+      "pamenar"
+    ],
+    "anchor": [
+      35.679670333862305,
+      51.42379379272461
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "parastar",
+    "display_fa": "پرستار",
+    "aliases": [
+      "parastar",
+      "پرستار"
+    ],
+    "source_labels": [
+      "parastar"
+    ],
+    "anchor": [
+      35.6867733001709,
+      51.48530387878418
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "pirouzi",
+    "display_fa": "پیروزی",
+    "aliases": [
+      "pirouzi",
+      "پیروزی"
+    ],
+    "source_labels": [
+      "pirouzi"
+    ],
+    "anchor": [
+      35.69243621826172,
+      51.48040771484375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "poonak",
+    "display_fa": "پونک",
+    "aliases": [
+      "poonak",
+      "پونک"
+    ],
+    "source_labels": [
+      "poonak"
+    ],
+    "anchor": [
+      35.76222229003906,
+      51.331172943115234
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "qalamestan",
+    "display_fa": "قلمستان",
+    "aliases": [
+      "qalamestan",
+      "قلمستان"
+    ],
+    "source_labels": [
+      "qalamestan"
+    ],
+    "anchor": [
+      35.67131423950195,
+      51.39669990539551
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "qasemabad",
+    "display_fa": "قاسم‌آباد",
+    "aliases": [
+      "qasemabad",
+      "قاسم‌آباد"
+    ],
+    "source_labels": [
+      "qasemabad"
+    ],
+    "anchor": [
+      35.705806732177734,
+      51.46826553344727
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "qeytariyeh",
+    "display_fa": "قیطریه",
+    "aliases": [
+      "qeytariyeh",
+      "قیطریه"
+    ],
+    "source_labels": [
+      "qeytariyeh"
+    ],
+    "anchor": [
+      35.790971755981445,
+      51.447998046875
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "qezel-qaleh",
+    "display_fa": "قزل قلعه",
+    "aliases": [
+      "qezel-qaleh",
+      "قزل قلعه"
+    ],
+    "source_labels": [
+      "qezel-qaleh"
+    ],
+    "anchor": [
+      35.72680473327637,
+      51.38931846618652
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "qoba",
+    "display_fa": "قبا",
+    "aliases": [
+      "qoba",
+      "قبا"
+    ],
+    "source_labels": [
+      "qoba"
+    ],
+    "anchor": [
+      35.76173782348633,
+      51.44821548461914
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sabalan",
+    "display_fa": "سبلان",
+    "aliases": [
+      "sabalan",
+      "سبلان"
+    ],
+    "source_labels": [
+      "sabalan"
+    ],
+    "anchor": [
+      35.72410202026367,
+      51.46244812011719
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sad-dastgah",
+    "display_fa": "صد دستگاه",
+    "aliases": [
+      "sad-dastgah",
+      "صد دستگاه"
+    ],
+    "source_labels": [
+      "sad-dastgah"
+    ],
+    "anchor": [
+      35.68827247619629,
+      51.46859359741211
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sadeghiyeh",
+    "display_fa": "صادقیه",
+    "aliases": [
+      "sadeghiyeh",
+      "صادقیه"
+    ],
+    "source_labels": [
+      "sadeghiyeh"
+    ],
+    "anchor": [
+      35.72018051147461,
+      51.34089279174805
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "safaiye",
+    "display_fa": "صفائیه",
+    "aliases": [
+      "safaiye",
+      "صفائیه"
+    ],
+    "source_labels": [
+      "safaiye"
+    ],
+    "anchor": [
+      35.60614585876465,
+      51.4460506439209
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "saheb-al-zaman",
+    "display_fa": "صاحب‌الزمان",
+    "aliases": [
+      "saheb-al-zaman",
+      "صاحب‌الزمان"
+    ],
+    "source_labels": [
+      "saheb-al-zaman"
+    ],
+    "anchor": [
+      35.675262451171875,
+      51.46429443359375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "salamat",
+    "display_fa": "سلامت",
+    "aliases": [
+      "salamat",
+      "سلامت"
+    ],
+    "source_labels": [
+      "salamat"
+    ],
+    "anchor": [
+      35.67671585083008,
+      51.38238525390625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sanglaj",
+    "display_fa": "سنگلج",
+    "aliases": [
+      "sanglaj",
+      "سنگلج"
+    ],
+    "source_labels": [
+      "sanglaj"
+    ],
+    "anchor": [
+      35.674461364746094,
+      51.41178894042969
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sar-asiyab-mehr-abad",
+    "display_fa": "سرآسیاب مهرآباد",
+    "aliases": [
+      "sar-asiyab-mehr-abad",
+      "سرآسیاب مهرآباد"
+    ],
+    "source_labels": [
+      "sar-asiyab-mehr-abad"
+    ],
+    "anchor": [
+      35.67185592651367,
+      51.32487487792969
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sarasiab-doolab",
+    "display_fa": "سرآسیاب دولاب",
+    "aliases": [
+      "sarasiab-doolab",
+      "سرآسیاب دولاب"
+    ],
+    "source_labels": [
+      "sarasiab-doolab"
+    ],
+    "anchor": [
+      35.67994499206543,
+      51.4616813659668
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sarsabil",
+    "display_fa": "سلسبیل",
+    "aliases": [
+      "sarsabil",
+      "سلسبیل"
+    ],
+    "source_labels": [
+      "sarsabil"
+    ],
+    "anchor": [
+      35.68735885620117,
+      51.37580680847168
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sarsabz",
+    "display_fa": "سرسبز",
+    "aliases": [
+      "sarsabz",
+      "سرسبز"
+    ],
+    "source_labels": [
+      "sarsabz"
+    ],
+    "anchor": [
+      35.72621726989746,
+      51.49853706359863
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sartakht",
+    "display_fa": "سرتخت",
+    "aliases": [
+      "sartakht",
+      "سرتخت"
+    ],
+    "source_labels": [
+      "sartakht"
+    ],
+    "anchor": [
+      35.66550254821777,
+      51.37170219421387
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sattarkhan",
+    "display_fa": "ستارخان",
+    "aliases": [
+      "sattarkhan",
+      "ستارخان"
+    ],
+    "source_labels": [
+      "sattarkhan"
+    ],
+    "anchor": [
+      35.718027114868164,
+      51.35927963256836
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sazamn-barnameh",
+    "display_fa": "سازمان برنامه",
+    "aliases": [
+      "sazamn-barnameh",
+      "سازمان برنامه"
+    ],
+    "source_labels": [
+      "sazamn-barnameh"
+    ],
+    "anchor": [
+      35.72997283935547,
+      51.30157470703125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sazman-ab",
+    "display_fa": "سازمان آب",
+    "aliases": [
+      "sazman-ab",
+      "سازمان آب"
+    ],
+    "source_labels": [
+      "sazman-ab"
+    ],
+    "anchor": [
+      35.7407169342041,
+      51.29266166687012
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sepehr",
+    "display_fa": "سپهر",
+    "aliases": [
+      "sepehr",
+      "سپهر"
+    ],
+    "source_labels": [
+      "sepehr"
+    ],
+    "anchor": [
+      35.76880073547363,
+      51.3568058013916
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "seyed-khandan",
+    "display_fa": "سیدخندان",
+    "aliases": [
+      "seyed-khandan",
+      "سیدخندان"
+    ],
+    "source_labels": [
+      "seyed-khandan"
+    ],
+    "anchor": [
+      35.7496337890625,
+      51.45270919799805
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shabiri",
+    "display_fa": "شبیری",
+    "aliases": [
+      "shabiri",
+      "شبیری"
+    ],
+    "source_labels": [
+      "shabiri"
+    ],
+    "anchor": [
+      35.551780700683594,
+      51.3336181640625
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shadman",
+    "display_fa": "شادمان",
+    "aliases": [
+      "shadman",
+      "شادمان"
+    ],
+    "source_labels": [
+      "shadman"
+    ],
+    "anchor": [
+      35.71026611328125,
+      51.3645133972168
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahadat",
+    "display_fa": "شهادت",
+    "aliases": [
+      "shahadat",
+      "شهادت"
+    ],
+    "source_labels": [
+      "shahadat"
+    ],
+    "anchor": [
+      35.61427688598633,
+      51.44760894775391
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shaharak-e-moslemin",
+    "display_fa": "شهرک مسلمین",
+    "aliases": [
+      "shaharak-e-moslemin",
+      "شهرک مسلمین"
+    ],
+    "source_labels": [
+      "shaharak-e-moslemin"
+    ],
+    "anchor": [
+      35.64836311340332,
+      51.328392028808594
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shaharak-e-shariyati",
+    "display_fa": "شهرک شریعتی",
+    "aliases": [
+      "shaharak-e-shariyati",
+      "شهرک شریعتی"
+    ],
+    "source_labels": [
+      "shaharak-e-shariyati"
+    ],
+    "anchor": [
+      35.636619567871094,
+      51.3768310546875
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahed",
+    "display_fa": "شاهد",
+    "aliases": [
+      "shahed",
+      "شاهد"
+    ],
+    "source_labels": [
+      "shahed"
+    ],
+    "anchor": [
+      35.67232894897461,
+      51.47575378417969
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahid-avini",
+    "display_fa": "شهید آوینی",
+    "aliases": [
+      "shahid-avini",
+      "شهید آوینی"
+    ],
+    "source_labels": [
+      "shahid-avini"
+    ],
+    "anchor": [
+      35.586015701293945,
+      51.42751693725586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahid-borujerdi",
+    "display_fa": "شهید بروجردی",
+    "aliases": [
+      "shahid-borujerdi",
+      "شهید بروجردی"
+    ],
+    "source_labels": [
+      "shahid-borujerdi"
+    ],
+    "anchor": [
+      35.63910484313965,
+      51.469900131225586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahid-dastgheyb",
+    "display_fa": "شهید دستغیب",
+    "aliases": [
+      "shahid-dastgheyb",
+      "شهید دستغیب"
+    ],
+    "source_labels": [
+      "shahid-dastgheyb"
+    ],
+    "anchor": [
+      35.68684387207031,
+      51.349395751953125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahid-navab-safavi",
+    "display_fa": "شهید نواب صفوی",
+    "aliases": [
+      "shahid-navab-safavi",
+      "شهید نواب صفوی"
+    ],
+    "source_labels": [
+      "shahid-navab-safavi"
+    ],
+    "anchor": [
+      35.67959213256836,
+      51.3807258605957
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahin",
+    "display_fa": "شاهین",
+    "aliases": [
+      "shahin",
+      "شاهین"
+    ],
+    "source_labels": [
+      "shahin"
+    ],
+    "anchor": [
+      35.76304626464844,
+      51.313175201416016
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahr-e-ziba",
+    "display_fa": "شهر زیبا",
+    "aliases": [
+      "shahr-e-ziba",
+      "شهر زیبا"
+    ],
+    "source_labels": [
+      "shahr-e-ziba"
+    ],
+    "anchor": [
+      35.75204849243164,
+      51.28828811645508
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-aboozar",
+    "display_fa": "شهرک ابوذر",
+    "aliases": [
+      "shahrak-e-aboozar",
+      "شهرک ابوذر"
+    ],
+    "source_labels": [
+      "shahrak-e-aboozar"
+    ],
+    "anchor": [
+      35.61251640319824,
+      51.35365676879883
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-azadi",
+    "display_fa": "شهرک آزادی",
+    "aliases": [
+      "shahrak-e-azadi",
+      "شهرک آزادی"
+    ],
+    "source_labels": [
+      "shahrak-e-azadi"
+    ],
+    "anchor": [
+      35.712242126464844,
+      51.27645111083984
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-cheshmeh",
+    "display_fa": "شهرک چشمه",
+    "aliases": [
+      "shahrak-e-cheshmeh",
+      "شهرک چشمه"
+    ],
+    "source_labels": [
+      "shahrak-e-cheshmeh"
+    ],
+    "anchor": [
+      35.749752044677734,
+      51.26362228393555
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-ferdows",
+    "display_fa": "شهرک فردوس",
+    "aliases": [
+      "shahrak-e-ferdows",
+      "شهرک فردوس"
+    ],
+    "source_labels": [
+      "shahrak-e-ferdows"
+    ],
+    "anchor": [
+      35.6634521484375,
+      51.330894470214844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-gharb",
+    "display_fa": "شهرک غرب",
+    "aliases": [
+      "shahrak-e-gharb",
+      "شهرک غرب"
+    ],
+    "source_labels": [
+      "shahrak-e-gharb"
+    ],
+    "anchor": [
+      35.760990142822266,
+      51.373321533203125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-jandarmeri",
+    "display_fa": "شهرک ژاندارمری",
+    "aliases": [
+      "shahrak-e-jandarmeri",
+      "شهرک ژاندارمری"
+    ],
+    "source_labels": [
+      "shahrak-e-jandarmeri"
+    ],
+    "anchor": [
+      35.73331451416016,
+      51.35735702514648
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-kianshahr",
+    "display_fa": "شهرک کیانشهر",
+    "aliases": [
+      "shahrak-e-kianshahr",
+      "شهرک کیانشهر"
+    ],
+    "source_labels": [
+      "shahrak-e-kianshahr"
+    ],
+    "anchor": [
+      35.63500213623047,
+      51.45108222961426
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-koohsar",
+    "display_fa": "شهرک کوهسار",
+    "aliases": [
+      "shahrak-e-koohsar",
+      "شهرک کوهسار"
+    ],
+    "source_labels": [
+      "shahrak-e-koohsar"
+    ],
+    "anchor": [
+      35.782114028930664,
+      51.33310890197754
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-mahalati",
+    "display_fa": "شهرک محلاتی",
+    "aliases": [
+      "shahrak-e-mahalati",
+      "شهرک محلاتی"
+    ],
+    "source_labels": [
+      "shahrak-e-mahalati"
+    ],
+    "anchor": [
+      35.81290054321289,
+      51.52464485168457
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-parvaz",
+    "display_fa": "شهرک پرواز",
+    "aliases": [
+      "shahrak-e-parvaz",
+      "شهرک پرواز"
+    ],
+    "source_labels": [
+      "shahrak-e-parvaz"
+    ],
+    "anchor": [
+      35.72815132141113,
+      51.3073787689209
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-takhti",
+    "display_fa": "شهرک تختی",
+    "aliases": [
+      "shahrak-e-takhti",
+      "شهرک تختی"
+    ],
+    "source_labels": [
+      "shahrak-e-takhti"
+    ],
+    "anchor": [
+      35.63041305541992,
+      51.41665267944336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-taleghani",
+    "display_fa": "شهرک طالقانی",
+    "aliases": [
+      "shahrak-e-taleghani",
+      "شهرک طالقانی"
+    ],
+    "source_labels": [
+      "shahrak-e-taleghani"
+    ],
+    "anchor": [
+      35.66364669799805,
+      51.26265335083008
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-e-vali-e-asr",
+    "display_fa": "شهرک ولیعصر",
+    "aliases": [
+      "shahrak-e-vali-e-asr",
+      "شهرک ولیعصر"
+    ],
+    "source_labels": [
+      "shahrak-e-vali-e-asr"
+    ],
+    "anchor": [
+      35.64749526977539,
+      51.34018325805664
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-farhangian",
+    "display_fa": "شهرک فرهنگیان",
+    "aliases": [
+      "shahrak-farhangian",
+      "شهرک فرهنگیان"
+    ],
+    "source_labels": [
+      "shahrak-farhangian"
+    ],
+    "anchor": [
+      35.7071647644043,
+      51.28583908081055
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-golha",
+    "display_fa": "شهرک گلها",
+    "aliases": [
+      "shahrak-golha",
+      "شهرک گلها"
+    ],
+    "source_labels": [
+      "shahrak-golha"
+    ],
+    "anchor": [
+      35.804710388183594,
+      51.49874114990234
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-naft",
+    "display_fa": "شهرک نفت",
+    "aliases": [
+      "shahrak-naft",
+      "شهرک نفت"
+    ],
+    "source_labels": [
+      "shahrak-naft"
+    ],
+    "anchor": [
+      35.807748794555664,
+      51.505563735961914
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-naft-district5",
+    "display_fa": "شهرک نفت منطقه ۵",
+    "aliases": [
+      "shahrak-naft-district5",
+      "شهرک نفت منطقه ۵"
+    ],
+    "source_labels": [
+      "shahrak-naft-district5"
+    ],
+    "anchor": [
+      35.78323745727539,
+      51.33639907836914
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shahrak-pasdaran",
+    "display_fa": "شهرک پاسداران",
+    "aliases": [
+      "shahrak-pasdaran",
+      "شهرک پاسداران"
+    ],
+    "source_labels": [
+      "shahrak-pasdaran"
+    ],
+    "anchor": [
+      35.69585037231445,
+      51.26402282714844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shams-abad",
+    "display_fa": "شمس‌آباد",
+    "aliases": [
+      "shams-abad",
+      "شمس‌آباد"
+    ],
+    "source_labels": [
+      "shams-abad"
+    ],
+    "anchor": [
+      35.74514389038086,
+      51.47813034057617
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shamshiri",
+    "display_fa": "شمشیری",
+    "aliases": [
+      "shamshiri",
+      "شمشیری"
+    ],
+    "source_labels": [
+      "shamshiri"
+    ],
+    "anchor": [
+      35.65800666809082,
+      51.32177543640137
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sharara",
+    "display_fa": "شهرآرا",
+    "aliases": [
+      "sharara",
+      "شهرآرا"
+    ],
+    "source_labels": [
+      "sharara"
+    ],
+    "anchor": [
+      35.720245361328125,
+      51.37173843383789
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sharif",
+    "display_fa": "شریف",
+    "aliases": [
+      "sharif",
+      "شریف"
+    ],
+    "source_labels": [
+      "sharif"
+    ],
+    "anchor": [
+      35.75628662109375,
+      51.15144348144531
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shemiran-no",
+    "display_fa": "شمیران نو",
+    "aliases": [
+      "shemiran-no",
+      "شمیران نو"
+    ],
+    "source_labels": [
+      "shemiran-no"
+    ],
+    "anchor": [
+      35.75412178039551,
+      51.500070571899414
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sheykh-al-raeis",
+    "display_fa": "شیخ‌الرئیس",
+    "aliases": [
+      "sheykh-al-raeis",
+      "شیخ‌الرئیس"
+    ],
+    "source_labels": [
+      "sheykh-al-raeis"
+    ],
+    "anchor": [
+      35.689720153808594,
+      51.44847869873047
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sheykh-hadi",
+    "display_fa": "شیخ هادی",
+    "aliases": [
+      "sheykh-hadi",
+      "شیخ هادی"
+    ],
+    "source_labels": [
+      "sheykh-hadi"
+    ],
+    "anchor": [
+      35.68981742858887,
+      51.40209770202637
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shian",
+    "display_fa": "شیان",
+    "aliases": [
+      "shian",
+      "شیان"
+    ],
+    "source_labels": [
+      "shian"
+    ],
+    "anchor": [
+      35.77164077758789,
+      51.49637222290039
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shiva",
+    "display_fa": "شیوا",
+    "aliases": [
+      "shiva",
+      "شیوا"
+    ],
+    "source_labels": [
+      "shiva"
+    ],
+    "anchor": [
+      35.67988204956055,
+      51.47208023071289
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shokoofeh",
+    "display_fa": "شکوفه",
+    "aliases": [
+      "shokoofeh",
+      "شکوفه"
+    ],
+    "source_labels": [
+      "shokoofeh"
+    ],
+    "anchor": [
+      35.68030548095703,
+      51.44822311401367
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "shoosh",
+    "display_fa": "شوش",
+    "aliases": [
+      "shoosh",
+      "شوش"
+    ],
+    "source_labels": [
+      "shoosh"
+    ],
+    "anchor": [
+      35.65301513671875,
+      51.44243621826172
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sizdah-aban",
+    "display_fa": "سیزده آبان",
+    "aliases": [
+      "sizdah-aban",
+      "سیزده آبان"
+    ],
+    "source_labels": [
+      "sizdah-aban"
+    ],
+    "anchor": [
+      35.613006591796875,
+      51.40633392333984
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "sohanak",
+    "display_fa": "سوهانک",
+    "aliases": [
+      "sohanak",
+      "سوهانک"
+    ],
+    "source_labels": [
+      "sohanak"
+    ],
+    "anchor": [
+      35.798038482666016,
+      51.53311920166016
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "soleymani",
+    "display_fa": "سلیمانی",
+    "aliases": [
+      "soleymani",
+      "سلیمانی"
+    ],
+    "source_labels": [
+      "soleymani"
+    ],
+    "anchor": [
+      35.67075538635254,
+      51.36195373535156
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "soleymanieh",
+    "display_fa": "سلیمانیه",
+    "aliases": [
+      "soleymanieh",
+      "سلیمانیه"
+    ],
+    "source_labels": [
+      "soleymanieh"
+    ],
+    "anchor": [
+      35.68203544616699,
+      51.45681381225586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-ali-abad",
+    "display_fa": "علی‌آباد جنوبی",
+    "aliases": [
+      "south-ali-abad",
+      "علی‌آباد جنوبی"
+    ],
+    "source_labels": [
+      "south-ali-abad"
+    ],
+    "anchor": [
+      35.63062286376953,
+      51.4177131652832
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-deylaman",
+    "display_fa": "دیلمان جنوبی",
+    "aliases": [
+      "south-deylaman",
+      "دیلمان جنوبی"
+    ],
+    "source_labels": [
+      "south-deylaman"
+    ],
+    "anchor": [
+      35.60387420654297,
+      51.43255233764648
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-janat-abad",
+    "display_fa": "جنت‌آباد جنوبی",
+    "aliases": [
+      "south-janat-abad",
+      "جنت‌آباد جنوبی"
+    ],
+    "source_labels": [
+      "south-janat-abad"
+    ],
+    "anchor": [
+      35.746315002441406,
+      51.30604553222656
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-mehrabad",
+    "display_fa": "مهرآباد جنوبی",
+    "aliases": [
+      "south-mehrabad",
+      "مهرآباد جنوبی"
+    ],
+    "source_labels": [
+      "south-mehrabad"
+    ],
+    "anchor": [
+      35.676456451416016,
+      51.3384017944336
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-narmak",
+    "display_fa": "نارمک جنوبی",
+    "aliases": [
+      "south-narmak",
+      "نارمک جنوبی"
+    ],
+    "source_labels": [
+      "south-narmak"
+    ],
+    "anchor": [
+      35.71562576293945,
+      51.48604202270508
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "south-shahran",
+    "display_fa": "شهران جنوبی",
+    "aliases": [
+      "south-shahran",
+      "شهران جنوبی"
+    ],
+    "source_labels": [
+      "south-shahran"
+    ],
+    "anchor": [
+      35.75901794433594,
+      51.29155349731445
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tajrish",
+    "display_fa": "تجریش",
+    "aliases": [
+      "tajrish",
+      "تجریش"
+    ],
+    "source_labels": [
+      "tajrish"
+    ],
+    "anchor": [
+      35.80350875854492,
+      51.4311408996582
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tarasht",
+    "display_fa": "طرشت",
+    "aliases": [
+      "tarasht",
+      "طرشت"
+    ],
+    "source_labels": [
+      "tarasht"
+    ],
+    "anchor": [
+      35.70665740966797,
+      51.34149169921875
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "taslihat",
+    "display_fa": "تسلیحات",
+    "aliases": [
+      "taslihat",
+      "تسلیحات"
+    ],
+    "source_labels": [
+      "taslihat"
+    ],
+    "anchor": [
+      35.71858787536621,
+      51.47671890258789
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "taxirani",
+    "display_fa": "تاکسیرانی",
+    "aliases": [
+      "taxirani",
+      "تاکسیرانی"
+    ],
+    "source_labels": [
+      "taxirani"
+    ],
+    "anchor": [
+      35.67356300354004,
+      51.487478256225586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tayeb",
+    "display_fa": "طیب",
+    "aliases": [
+      "tayeb",
+      "طیب"
+    ],
+    "source_labels": [
+      "tayeb"
+    ],
+    "anchor": [
+      35.660743713378906,
+      51.448204040527344
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-emamat",
+    "display_fa": "امامت",
+    "aliases": [
+      "tehran-emamat",
+      "امامت"
+    ],
+    "source_labels": [
+      "tehran-emamat"
+    ],
+    "anchor": [
+      35.7110595703125,
+      51.48896789550781
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-gorgan",
+    "display_fa": "گرگان",
+    "aliases": [
+      "tehran-gorgan",
+      "گرگان"
+    ],
+    "source_labels": [
+      "tehran-gorgan"
+    ],
+    "anchor": [
+      35.71192169189453,
+      51.45256805419922
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-hesarak",
+    "display_fa": "حصارک",
+    "aliases": [
+      "tehran-hesarak",
+      "حصارک"
+    ],
+    "source_labels": [
+      "tehran-hesarak"
+    ],
+    "anchor": [
+      35.779266357421875,
+      51.3066520690918
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-hosein-abad",
+    "display_fa": "حسین‌آباد",
+    "aliases": [
+      "tehran-hosein-abad",
+      "حسین‌آباد"
+    ],
+    "source_labels": [
+      "tehran-hosein-abad"
+    ],
+    "anchor": [
+      35.7724723815918,
+      51.47941207885742
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-iran",
+    "display_fa": "ایران",
+    "aliases": [
+      "tehran-iran",
+      "ایران"
+    ],
+    "source_labels": [
+      "tehran-iran"
+    ],
+    "anchor": [
+      35.686031341552734,
+      51.44072914123535
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-jolfa",
+    "display_fa": "جلفا",
+    "aliases": [
+      "tehran-jolfa",
+      "جلفا"
+    ],
+    "source_labels": [
+      "tehran-jolfa"
+    ],
+    "anchor": [
+      35.746543884277344,
+      51.444637298583984
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-kerman",
+    "display_fa": "کرمان",
+    "aliases": [
+      "tehran-kerman",
+      "کرمان"
+    ],
+    "source_labels": [
+      "tehran-kerman"
+    ],
+    "anchor": [
+      35.73331260681152,
+      51.47409248352051
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-lashkar",
+    "display_fa": "لشکر",
+    "aliases": [
+      "tehran-lashkar",
+      "لشکر"
+    ],
+    "source_labels": [
+      "tehran-lashkar"
+    ],
+    "anchor": [
+      35.72568130493164,
+      51.46786880493164
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-no",
+    "display_fa": "تهران نو",
+    "aliases": [
+      "tehran-no",
+      "تهران نو"
+    ],
+    "source_labels": [
+      "tehran-no"
+    ],
+    "anchor": [
+      35.70841598510742,
+      51.496482849121094
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-police",
+    "display_fa": "پلیس",
+    "aliases": [
+      "tehran-police",
+      "پلیس"
+    ],
+    "source_labels": [
+      "tehran-police"
+    ],
+    "anchor": [
+      35.71742820739746,
+      51.44318199157715
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-shandiz",
+    "display_fa": "شاندیز",
+    "aliases": [
+      "tehran-shandiz",
+      "شاندیز"
+    ],
+    "source_labels": [
+      "tehran-shandiz"
+    ],
+    "anchor": [
+      35.65449523925781,
+      51.35151672363281
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehran-zanjan",
+    "display_fa": "زنجان",
+    "aliases": [
+      "tehran-zanjan",
+      "زنجان"
+    ],
+    "source_labels": [
+      "tehran-zanjan"
+    ],
+    "anchor": [
+      35.696380615234375,
+      51.36042785644531
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tehranvila",
+    "display_fa": "تهران‌ویلا",
+    "aliases": [
+      "tehranvila",
+      "تهران‌ویلا"
+    ],
+    "source_labels": [
+      "tehranvila"
+    ],
+    "anchor": [
+      35.723106384277344,
+      51.366058349609375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tolid-daroo",
+    "display_fa": "تولید دارو",
+    "aliases": [
+      "tolid-daroo",
+      "تولید دارو"
+    ],
+    "source_labels": [
+      "tolid-daroo"
+    ],
+    "anchor": [
+      35.66291809082031,
+      51.340118408203125
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "tous",
+    "display_fa": "طوس",
+    "aliases": [
+      "tous",
+      "طوس"
+    ],
+    "source_labels": [
+      "tous"
+    ],
+    "anchor": [
+      35.659963607788086,
+      51.35620307922363
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "university-of-sharif",
+    "display_fa": "دانشگاه شریف",
+    "aliases": [
+      "university-of-sharif",
+      "دانشگاه شریف"
+    ],
+    "source_labels": [
+      "university-of-sharif"
+    ],
+    "anchor": [
+      35.70208740234375,
+      51.35454559326172
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "vahidiyeh",
+    "display_fa": "وحیدیه",
+    "aliases": [
+      "vahidiyeh",
+      "وحیدیه"
+    ],
+    "source_labels": [
+      "vahidiyeh"
+    ],
+    "anchor": [
+      35.715919494628906,
+      51.47056579589844
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "vardavard",
+    "display_fa": "وردآورد",
+    "aliases": [
+      "vardavard",
+      "وردآورد"
+    ],
+    "source_labels": [
+      "vardavard"
+    ],
+    "anchor": [
+      35.7408332824707,
+      51.13355255126953
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "vasfenard",
+    "display_fa": "وصفنارد",
+    "aliases": [
+      "vasfenard",
+      "وصفنارد"
+    ],
+    "source_labels": [
+      "vasfenard"
+    ],
+    "anchor": [
+      35.64741516113281,
+      51.3580436706543
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "west-shahrak-e-golestan",
+    "display_fa": "شهرک گلستان غربی",
+    "aliases": [
+      "west-shahrak-e-golestan",
+      "شهرک گلستان غربی"
+    ],
+    "source_labels": [
+      "west-shahrak-e-golestan"
+    ],
+    "anchor": [
+      35.75276565551758,
+      51.23021125793457
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "west-tehranpars",
+    "display_fa": "تهرانپارس غربی",
+    "aliases": [
+      "west-tehranpars",
+      "تهرانپارس غربی"
+    ],
+    "source_labels": [
+      "west-tehranpars"
+    ],
+    "anchor": [
+      35.74154853820801,
+      51.52903366088867
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "yaftabad",
+    "display_fa": "یافت‌آباد",
+    "aliases": [
+      "yaftabad",
+      "یافت‌آباد"
+    ],
+    "source_labels": [
+      "yaftabad"
+    ],
+    "anchor": [
+      35.64248466491699,
+      51.30323028564453
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "yakhchi-abad",
+    "display_fa": "یاخچی‌آباد",
+    "aliases": [
+      "yakhchi-abad",
+      "یاخچی‌آباد"
+    ],
+    "source_labels": [
+      "yakhchi-abad"
+    ],
+    "anchor": [
+      35.631248474121094,
+      51.40087127685547
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zafar",
+    "display_fa": "ظفر",
+    "aliases": [
+      "zafar",
+      "ظفر"
+    ],
+    "source_labels": [
+      "zafar"
+    ],
+    "anchor": [
+      35.766544342041016,
+      51.43113327026367
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zafaraniyeh",
+    "display_fa": "زعفرانیه",
+    "aliases": [
+      "zafaraniyeh",
+      "زعفرانیه"
+    ],
+    "source_labels": [
+      "zafaraniyeh"
+    ],
+    "anchor": [
+      35.80881309509277,
+      51.412519454956055
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zahed-gilani",
+    "display_fa": "زاهد گیلانی",
+    "aliases": [
+      "zahed-gilani",
+      "زاهد گیلانی"
+    ],
+    "source_labels": [
+      "zahed-gilani"
+    ],
+    "anchor": [
+      35.69425582885742,
+      51.46052169799805
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zahir-abad",
+    "display_fa": "ظهیرآباد",
+    "aliases": [
+      "zahir-abad",
+      "ظهیرآباد"
+    ],
+    "source_labels": [
+      "zahir-abad"
+    ],
+    "anchor": [
+      35.58856201171875,
+      51.45102310180664
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zamzam",
+    "display_fa": "زمزم",
+    "aliases": [
+      "zamzam",
+      "زمزم"
+    ],
+    "source_labels": [
+      "zamzam"
+    ],
+    "anchor": [
+      35.647844314575195,
+      51.366498947143555
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zargandeh",
+    "display_fa": "زرگنده",
+    "aliases": [
+      "zargandeh",
+      "زرگنده"
+    ],
+    "source_labels": [
+      "zargandeh"
+    ],
+    "anchor": [
+      35.77486038208008,
+      51.42898178100586
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zarkesh",
+    "display_fa": "زرکش",
+    "aliases": [
+      "zarkesh",
+      "زرکش"
+    ],
+    "source_labels": [
+      "zarkesh"
+    ],
+    "anchor": [
+      35.71538543701172,
+      51.478607177734375
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "zehtabi",
+    "display_fa": "زهتابی",
+    "aliases": [
+      "zehtabi",
+      "زهتابی"
+    ],
+    "source_labels": [
+      "zehtabi"
+    ],
+    "anchor": [
+      35.6415901184082,
+      51.361589431762695
+    ],
+    "classification": "mapped"
+  },
+  {
+    "key": "امیرآباد",
+    "display_fa": "امیرآباد",
+    "aliases": [
+      "امیرآباد"
+    ],
+    "source_labels": [
+      "امیرآباد"
+    ],
+    "anchor": [
+      35.73639678955078,
+      51.39247131347656
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "بهجت‌آباد",
+    "display_fa": "بهجت‌آباد",
+    "aliases": [
+      "بهجت‌آباد"
+    ],
+    "source_labels": [
+      "بهجت‌آباد"
+    ],
+    "anchor": [
+      35.71830749511719,
+      51.41372489929199
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "تهرانسر",
+    "display_fa": "تهرانسر",
+    "aliases": [
+      "تهرانسر"
+    ],
+    "source_labels": [
+      "تهرانسر"
+    ],
+    "anchor": [
+      35.69728088378906,
+      51.25701141357422
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "توانیر",
+    "display_fa": "توانیر",
+    "aliases": [
+      "توانیر"
+    ],
+    "source_labels": [
+      "توانیر"
+    ],
+    "anchor": [
+      35.7484245300293,
+      51.408708572387695
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "توحید",
+    "display_fa": "توحید",
+    "aliases": [
+      "توحید"
+    ],
+    "source_labels": [
+      "توحید"
+    ],
+    "anchor": [
+      35.70365333557129,
+      51.373430252075195
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "جردن",
+    "display_fa": "جردن",
+    "aliases": [
+      "جردن"
+    ],
+    "source_labels": [
+      "جردن"
+    ],
+    "anchor": [
+      35.76875686645508,
+      51.41928863525391
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "حکیمیه",
+    "display_fa": "حکیمیه",
+    "aliases": [
+      "حکیمیه"
+    ],
+    "source_labels": [
+      "حکیمیه"
+    ],
+    "anchor": [
+      35.7383975982666,
+      51.590768814086914
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "دانشگاه تهران",
+    "display_fa": "دانشگاه تهران",
+    "aliases": [
+      "دانشگاه تهران"
+    ],
+    "source_labels": [
+      "دانشگاه تهران"
+    ],
+    "anchor": [
+      35.70787239074707,
+      51.399179458618164
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "دروس",
+    "display_fa": "دروس",
+    "aliases": [
+      "دروس"
+    ],
+    "source_labels": [
+      "دروس"
+    ],
+    "anchor": [
+      35.77452087402344,
+      51.45573806762695
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "سعادت‌آباد",
+    "display_fa": "سعادت‌آباد",
+    "aliases": [
+      "سعادت‌آباد"
+    ],
+    "source_labels": [
+      "سعادت‌آباد"
+    ],
+    "anchor": [
+      35.781734466552734,
+      51.37458038330078
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "شادآباد",
+    "display_fa": "شادآباد",
+    "aliases": [
+      "شادآباد"
+    ],
+    "source_labels": [
+      "شادآباد"
+    ],
+    "anchor": [
+      35.65924072265625,
+      51.30270385742188
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "عباس‌آباد",
+    "display_fa": "عباس‌آباد",
+    "aliases": [
+      "عباس‌آباد"
+    ],
+    "source_labels": [
+      "عباس‌آباد"
+    ],
+    "anchor": [
+      35.72707748413086,
+      51.43461227416992
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "قلهک",
+    "display_fa": "قلهک",
+    "aliases": [
+      "قلهک"
+    ],
+    "source_labels": [
+      "قلهک"
+    ],
+    "anchor": [
+      35.77467727661133,
+      51.444143295288086
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "مطهری",
+    "display_fa": "مطهری",
+    "aliases": [
+      "مطهری"
+    ],
+    "source_labels": [
+      "مطهری"
+    ],
+    "anchor": [
+      35.71709632873535,
+      51.42038536071777
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "mirdamad",
+    "display_fa": "میرداماد",
+    "aliases": [
+      "میرداماد",
+      "mirdamad",
+      "میرداماده"
+    ],
+    "source_labels": [
+      "میرداماد"
+    ],
+    "anchor": [
+      35.758527755737305,
+      51.44273567199707
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "ولنجک",
+    "display_fa": "ولنجک",
+    "aliases": [
+      "ولنجک"
+    ],
+    "source_labels": [
+      "ولنجک"
+    ],
+    "anchor": [
+      35.806222915649414,
+      51.40092086791992
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "valiasr",
+    "display_fa": "ولیعصر",
+    "aliases": [
+      "ولیعصر",
+      "valiasr"
+    ],
+    "source_labels": [
+      "ولیعصر"
+    ],
+    "anchor": [
+      35.7117,
+      51.4072
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "vanak",
+    "display_fa": "ونک",
+    "aliases": [
+      "ونک",
+      "vanak"
+    ],
+    "source_labels": [
+      "ونک"
+    ],
+    "anchor": [
+      35.7575,
+      51.4099
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "pasdaran",
+    "display_fa": "پاسداران",
+    "aliases": [
+      "پاسداران",
+      "pasdaran",
+      "پاسدارانه"
+    ],
+    "source_labels": [
+      "پاسداران"
+    ],
+    "anchor": [
+      35.765607833862305,
+      51.46342086791992
+    ],
+    "classification": "Persian"
+  },
+  {
+    "key": "یوسف‌آباد",
+    "display_fa": "یوسف‌آباد",
+    "aliases": [
+      "یوسف‌آباد"
+    ],
+    "source_labels": [
+      "یوسف‌آباد"
+    ],
+    "anchor": [
+      35.73558235168457,
+      51.40559387207031
+    ],
+    "classification": "Persian"
+  }
+]

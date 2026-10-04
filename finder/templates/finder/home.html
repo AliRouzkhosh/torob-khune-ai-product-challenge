@@ -1,0 +1,16 @@
+{% extends 'finder/base.html' %}{% block content %}
+<section class="entry">
+<p class="eyebrow">اول زندگی تو، بعد فیلترها</p>
+<h1>دنبال چه جور خونه‌ای هستی؟</h1>
+<p class="lead">به‌جای تنظیم ده‌ها فیلتر، چیزهایی که واقعاً برات مهمه رو بگو.</p>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+<form action="{% url 'intent' %}" method="post" class="search-box">{% csrf_token %}
+<label for="query">بودجه، محل کار و چیزهایی که دوست داری</label>
+<textarea id="query" name="query" rows="4" required maxlength="2000" placeholder="مثلاً: دوخوابه نزدیک ونک، نور خوب و حدود ۲۵ میلیون اجاره…">{{ query }}</textarea>
+<div class="search-bottom"><span>اول برداشت ما رو مرور و اصلاح می‌کنی.</span><div class="home-search-actions"><button class="primary" type="submit">پیدا کردن خونه‌های مناسب <span aria-hidden="true">←</span></button><button type="button" class="secondary" data-advanced-open aria-controls="advanced-filters" aria-expanded="false">فیلترها</button></div></div>
+</form>
+<section class="starters"><div class="section-heading"><h2>یا با یک مثال شروع کن</h2><span id="example-status" class="muted" role="status" aria-live="polite"></span></div>
+{% for key, scenario in scenarios.items %}<form method="post" action="{% url 'intent' %}">{% csrf_token %}<button type="submit" name="scenario" value="{{ key }}" data-example="{{ scenario.1 }}" class="starter"><span class="starter-title">{{ scenario.0 }}</span><span class="starter-description">{{ scenario.1 }}</span><span aria-hidden="true">←</span></button></form>{% endfor %}
+</section>
+<div class="entry-note"><strong>یک انتخاب آگاهانه‌تر</strong><p>هم دلیل مناسب بودن هر خانه را می‌بینی، هم چیزهایی که باید با آن کنار بیایی.</p></div>
+</section>{% include 'finder/_advanced_filters.html' %}{% endblock %}

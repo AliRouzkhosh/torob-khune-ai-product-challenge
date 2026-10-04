@@ -1,0 +1,14 @@
+{% extends 'finder/base.html' %}
+{% block title %}ورود به {{ brand_name }}{% endblock %}
+{% block body_class %}auth-page{% endblock %}
+{% block content %}
+<section class="login-panel" aria-labelledby="login-heading">
+<h1 id="login-heading">ورود به ترب‌خونه</h1><p class="lead">برای دیدن اطلاعات تماس آگهی وارد شو.</p>
+{% if demo_login_enabled %}<form method="post" action="{% url 'demo_login' %}" class="demo-login">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}"><button class="primary" type="submit">ورود با حساب آزمایشی</button><p class="muted">ورود سریع برای امتحان این نمونه؛ تماس‌ها نمایشی‌اند.</p></form><div class="login-divider"><span>یا</span></div>{% endif %}
+{% if demo_error %}<p class="error" role="alert">{{ demo_error }}</p>{% endif %}
+<form method="post" action="{% url 'login' %}">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+{% if form.non_field_errors %}<div class="error" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+{% for field in form %}<div class="login-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}
+<button class="{% if demo_login_enabled %}secondary{% else %}primary{% endif %}" type="submit">ورود</button></form>
+{% if safe_back %}<a class="text-link login-back" href="{{ safe_back }}">← بازگشت به آگهی</a>{% endif %}
+</section>{% endblock %}

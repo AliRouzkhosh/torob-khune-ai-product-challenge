@@ -1,0 +1,2 @@
+# Optional; only the offline Parquet import/preprocessing command uses this package.
+pyarrow>=18,<24

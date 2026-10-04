@@ -1,0 +1,7 @@
+{
+  "name": "khanehyab-demo",
+  "private": true,
+  "scripts": {"build:css": "tailwindcss -i finder/static/finder/src.css -o finder/static/finder/app.css --minify"},
+  "devDependencies": {"tailwindcss": "^4.1.0", "@tailwindcss/cli": "^4.1.0"},
+  "dependencies": {"@fontsource-variable/vazirmatn": "^5.2.0"}
+}

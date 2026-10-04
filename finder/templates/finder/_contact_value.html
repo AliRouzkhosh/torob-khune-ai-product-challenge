@@ -1,0 +1,5 @@
+<div class="contact-value">
+{% if request.user.is_authenticated %}<div class="contact-number-slot"><span class="muted">شماره تماس نمایشی</span>{% if contact_action == 'phone' and demo_contact %}<strong class="demo-phone" dir="ltr" tabindex="-1">{{ demo_contact.display_phone }}</strong>{% else %}<span class="muted">با دکمه زیر، شماره نمایشی را ببین.</span>{% endif %}</div>{% endif %}
+<div class="contact-actions">{% include 'finder/_contact_actions.html' %}</div>
+<div class="contact-feedback" role="status" aria-live="polite">{% if contact_action == 'bale' %}{% if demo_contact.bale_url %}<span>این مسیر بله نمایشی است؛ متعلق به صاحب آگهی نیست.</span><a class="text-link" href="{{ demo_contact.bale_url }}" target="_blank" rel="noopener noreferrer" data-bale-link>باز کردن مسیر نمایشی بله ←</a>{% else %}<span>ارسال پیام در نسخه نمایشی شبیه‌سازی شده است.</span><span class="muted">پیامی ارسال نشده و آگهی‌دهنده‌ای آن را دریافت نمی‌کند.</span>{% endif %}{% endif %}</div>
+<p class="contact-disclaimer">اطلاعات تماس در این نمونه نمایشی است و متعلق به آگهی اصلی نیست.</p></div>

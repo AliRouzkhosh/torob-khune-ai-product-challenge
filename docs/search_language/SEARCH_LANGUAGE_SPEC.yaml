@@ -1,0 +1,1513 @@
+meta:
+  name: KhaneYab Persian Housing Search Language Specification
+  version: 0.2.0
+  status: expanded-language-draft
+  language: fa-IR
+  purpose: Declarative vocabulary and grammar for converting Persian housing requests into SearchIntent / IntentPatch updates.
+    This is designed for KhaneYab's deterministic parser and evidence-aware ranking, not for a general-purpose Persian NLP
+    system.
+  design_principles:
+  - Latest explicit user action wins.
+  - A follow-up patch changes only explicitly mentioned fields; absent fields are preserved.
+  - A new self-contained search replaces prior SearchIntent constraints.
+  - Unknown listing evidence is not equivalent to false.
+  - Structured facts outrank text-derived claims when both exist.
+  - Text-derived claims must retain evidence wording and should not be presented as verified facts.
+  - Hard constraints, soft preferences, and conditional/fallback rules must remain distinguishable.
+  - Location intent and workplace context are separate concepts.
+  - Manual filters and natural-language requests must synchronize through one canonical SearchIntent.
+  - Do not infer sensitive protected characteristics as housing suitability criteria.
+  evidence_tiers:
+    A: Structured/geo data already suitable for direct filtering or scoring.
+    B: Can be extracted from listing title/description as seller/ad evidence; unknown is common.
+    C: Parser may understand the request, but current data may be sparse or usually unknown.
+  companion_files:
+  - SEARCH_LANGUAGE_PHRASE_BANK.yaml
+  - SEARCH_LANGUAGE_REGRESSION.yaml
+  - COVERAGE_REPORT.md
+  v0_2_changes:
+  - Expanded colloquial Persian and common spelling variants.
+  - Added Tehran-market vocabulary banks.
+  - Expanded concept-level synonym/negation/priority phrase families.
+  - Expanded difficult compound, conditional, exception and fallback language.
+  - Expanded stateful refinement/context-reference coverage.
+  - Added explicit evidence-awareness regression language.
+canonical_enums:
+  priority:
+  - ignored
+  - low
+  - medium
+  - high
+  - very_high
+  - required
+  evidence_state:
+  - 'yes'
+  - 'no'
+  - unknown
+  constraint_mode:
+  - any
+  - exact
+  - min
+  - max
+  - range
+  - allowed
+  - excluded
+  - preferred
+  location_mode:
+  - exact
+  - nearby
+  - preferred
+  query_operation:
+  - NEW_SEARCH
+  - PATCH
+  - CONTEXTUAL_PATCH
+normalization:
+  unicode_replacements:
+    ي: ی
+    ى: ی
+    ك: ک
+    ۀ: ه
+    ة: ه
+  digit_sets:
+    persian: ۰۱۲۳۴۵۶۷۸۹
+    arabic: ٠١٢٣٤٥٦٧٨٩
+    latin: 0123456789
+  rules:
+  - trim leading/trailing whitespace
+  - collapse repeated whitespace
+  - treat ZWNJ and normal-space variants as equivalent for matching
+  - 'normalize punctuation variants: ؛ ; ، ,'
+  - normalize colloquial negatives such as نمیخوام / نمی‌خوام
+  - normalize میخوام / می‌خوام and میخام / می‌خوام
+  - normalize خوابه / خواب when used after a number
+  - normalize تومن / تومان
+  - normalize ملیون / میلیون
+  number_words:
+    صفر: 0
+    یک: 1
+    یه: 1
+    دو: 2
+    سه: 3
+    چهار: 4
+    پنج: 5
+    شش: 6
+    هفت: 7
+    هشت: 8
+    نه: 9
+    ده: 10
+    یازده: 11
+    دوازده: 12
+    سیزده: 13
+    چهارده: 14
+    پانزده: 15
+    بیست: 20
+    سی: 30
+    چهل: 40
+    پنجاه: 50
+    صد: 100
+  unit_aliases:
+    million_toman:
+    - میلیون تومان
+    - میلیون تومن
+    - میلیون
+    - م
+    billion_toman:
+    - میلیارد تومان
+    - میلیارد تومن
+    - میلیارد
+    square_meter:
+    - متر
+    - متر مربع
+    - مترمربع
+    kilometer:
+    - کیلومتر
+    - کیلو متر
+    - km
+    meter_distance:
+    - متر
+    - m
+    year:
+    - سال
+    - ساله
+    percent:
+    - درصد
+    - ٪
+    - '%'
+query_operation:
+  patch_markers:
+  - حالا
+  - این بار
+  - ولی
+  - اما
+  - دیگه
+  - هم
+  - همچنان
+  - همون
+  - همان
+  - اون
+  - آن
+  - نزدیکش
+  - اطرافش
+  - دورش
+  - داخلش
+  - خودش
+  - محل کارم
+  - جایی که کار می‌کنم
+  - اضافه کن
+  - حذف کن
+  - مهم نیست
+  - مهم‌تر
+  - کمتر مهم
+  - حتماً
+  - لازم نیست
+  - لازم دارم
+  - هم نبود اشکال نداره
+  - تا این مقدار هم اوکیه
+  - بیخیال
+  - از این به بعد
+  new_search_heuristic:
+    rule: If there is no strong patch/context marker and the query contains at least 3 independent recognized intent dimensions,
+      classify as NEW_SEARCH.
+    independent_dimensions:
+    - location
+    - workplace
+    - bedrooms
+    - bathrooms
+    - area
+    - floor
+    - building_age
+    - renovation
+    - parking
+    - elevator
+    - storage
+    - balcony_outdoor
+    - pets
+    - furnishing
+    - heating_cooling
+    - natural_light
+    - quietness
+    - layout
+    - building_density
+    - security
+    - view_privacy
+    - accessibility
+    - transport_access
+    - deposit
+    - rent
+    - budget_flexibility
+    - availability_movein
+  explicit_force_new_search_phrases:
+  - جستجوی جدید
+  - از اول
+  - یه خونه کاملاً متفاوت می‌خوام
+  - این جستجو رو بیخیال
+  - از نو بگرد
+  - یه سرچ جدید
+  explicit_force_patch_phrases:
+  - همین جستجو رو تغییر بده
+  - فقط اینو عوض کن
+  - بقیه چیزها همون باشه
+  - همه چیز قبلی بمونه
+global_lexicon:
+  requirement:
+  - حتماً
+  - حتما
+  - الزامیه
+  - ضروریه
+  - لازم دارم
+  - باید داشته باشه
+  - بدونش نمی‌خوام
+  - نباشه ردش کن
+  - فقط با
+  - اجباریه
+  preference:
+  - ترجیح می‌دم
+  - ترجیحاً
+  - بهتره
+  - دوست دارم
+  - خوبه داشته باشه
+  - مزیت حساب می‌شه
+  - امتیازه
+  - اگه باشه بهتره
+  low_priority:
+  - خیلی مهم نیست
+  - اولویت پایین‌تری داره
+  - زیاد مهم نیست
+  - اهمیت کمی داره
+  ignore_unset:
+  - مهم نیست
+  - لازم نیست
+  - نمی‌خوام
+  - نمیخوام
+  - بیخیال
+  - فرقی نداره
+  - برام اهمیتی نداره
+  - اجباری نیست
+  - می‌تونم بدونش کنار بیام
+  - حذفش کن
+  positive_intensifiers:
+  - خیلی
+  - واقعاً
+  - واقعا
+  - حتماً
+  - حتما
+  - شدیداً
+  - شدیدا
+  - اولویت اول
+  - مهم‌ترین
+  - از همه مهم‌تر
+  relaxation:
+  - اوکیه
+  - اشکال نداره
+  - مشکلی نیست
+  - قبوله
+  - قابل قبوله
+  - می‌تونم کنار بیام
+  - کمی بیشتر هم خوبه
+  - یه کم بیشتر هم اوکیه
+  - نبود هم اشکال نداره
+  negation:
+  - نه
+  - نباشه
+  - نمی‌خوام
+  - نمیخوام
+  - نمی‌خواد
+  - نمیخواد
+  - بدون
+  - ممنوع
+  - رد کن
+  - اصلاً نه
+  - اصلا نه
+  comparative:
+  - مهم‌تر از
+  - کم‌اهمیت‌تر از
+  - بهتر از
+  - ترجیح می‌دم به
+  - اولویت بالاتری داره
+  fallback:
+  - اگر نبود
+  - اگه نبود
+  - اگه پیدا نشد
+  - اگر پیدا نشد
+  - بعدش
+  - در مرحله بعد
+  - در غیر این صورت
+  - اگه گزینه کم بود
+  - اگه چیزی نبود
+context_references:
+  workplace:
+  - محل کارم
+  - محل کار
+  - جایی که کار می‌کنم
+  - همون جایی که کار می‌کنم
+  - دفترم
+  - شرکتم
+  - محل شرکتم
+  current_location:
+  - همون محله
+  - همان محله
+  - اون محله
+  - آن محله
+  - همون محدوده
+  - همان محدوده
+  - نزدیکش
+  - اطرافش
+  - دورش
+  - خودش
+  - داخلش
+  current_budget:
+  - همون بودجه
+  - بودجه قبلی
+  - همون قیمت
+  - همون اجاره
+  - همون ودیعه
+  current_bedrooms:
+  - همون تعداد خواب
+  - همون دو خواب
+  - همون سه خواب
+  - تعداد خواب قبلی
+concepts:
+  desired_location:
+    tier: A
+    value_type: location
+    aliases:
+    - محله
+    - منطقه
+    - محدوده
+    - لوکیشن
+    - جای خونه
+    exact_phrases:
+    - فقط {place}
+    - داخل {place}
+    - خود {place}
+    - حتماً {place}
+    - حتما {place}
+    - فقط داخل {place}
+    - دقیقاً {place}
+    - دقیقا {place}
+    nearby_phrases:
+    - نزدیک {place}
+    - حوالی {place}
+    - اطراف {place}
+    - دور و بر {place}
+    - '{place} یا اطرافش'
+    - '{place} و اطراف'
+    - '{place} یا محله‌های اطراف'
+    - نزدیکای {place}
+    - نزدیکی {place}
+    preferred_phrases:
+    - ترجیحاً {place}
+    - '{place} بهتره'
+    - اگر {place} باشه بهتره
+    - اولویت با {place}
+    - '{place} ترجیحیه'
+    unset_phrases:
+    - محله مهم نیست
+    - منطقه مهم نیست
+    - هر محله‌ای اوکیه
+    - لوکیشن مهم نیست
+    evidence_policy: Structured normalized neighborhood and/or coordinates.
+  workplace:
+    tier: A
+    value_type: location_context
+    aliases:
+    - محل کار
+    - دفتر
+    - شرکت
+    - جایی که کار می‌کنم
+    phrases:
+    - حوالی {place} کار می‌کنم
+    - '{place} کار می‌کنم'
+    - محل کارم {place}ه
+    - دفترم {place}ه
+    - شرکتم {place}ه
+    - محل شرکتم {place}ه
+    reference_resolution:
+    - محل کارم
+    - جایی که کار می‌کنم
+    - دفترم
+    - شرکتم
+    notes: Do not automatically set desired_location merely because workplace is known.
+  commute_priority:
+    tier: A
+    value_type: priority
+    aliases:
+    - رفت‌وآمد
+    - رفت و آمد
+    - مسیر
+    - فاصله تا محل کار
+    - نزدیکی به محل کار
+    high_phrases:
+    - رفت‌وآمد مهمه
+    - مسیر کوتاه مهمه
+    - نزدیک محل کار باشه
+    - فاصله تا محل کار مهمه
+    - رفت و آمد کوتاه می‌خوام
+    - مسیرم کوتاه باشه
+    very_high_phrases:
+    - رفت‌وآمد از همه چیز مهم‌تره
+    - مسیر مهم‌ترین چیزه
+    - نزدیکی به محل کار اولویت اوله
+    - هرچی نزدیک‌تر بهتر
+    - رفت و آمد اولویت اولمه
+    ignore_phrases:
+    - رفت‌وآمد مهم نیست
+    - فاصله تا محل کار مهم نیست
+    - مسیر برام مهم نیست
+  deposit:
+    tier: A
+    value_type: money_constraint
+    aliases:
+    - ودیعه
+    - رهن
+    - پول پیش
+    - پیش
+    templates:
+      exact_or_target:
+      - '{amount} ودیعه'
+      - '{amount} رهن'
+      - '{amount} پول پیش'
+      max:
+      - ودیعه تا {amount}
+      - رهن تا {amount}
+      - بیشتر از {amount} ودیعه نشه
+      min:
+      - حداقل {amount} ودیعه
+      - می‌تونم حداقل {amount} پیش بدم
+      increase:
+      - ودیعه رو تا {amount} ببر
+      - تا {amount} ودیعه هم اوکیه
+      unset:
+      - ودیعه مهم نیست
+      - رهن مهم نیست
+      - محدودیت ودیعه ندارم
+  rent:
+    tier: A
+    value_type: money_constraint
+    aliases:
+    - اجاره
+    - کرایه
+    - اجاره ماهانه
+    templates:
+      exact_or_target:
+      - '{amount} اجاره'
+      - '{amount} اجاره ماهانه'
+      max:
+      - اجاره تا {amount}
+      - بیشتر از {amount} اجاره نشه
+      - حداکثر {amount} اجاره
+      min:
+      - حداقل {amount} اجاره
+      increase:
+      - تا {amount} اجاره هم اوکیه
+      - اجاره رو تا {amount} ببر
+      decrease:
+      - اجاره کمتر می‌خوام
+      - اجاره پایین‌تر باشه
+      unset:
+      - اجاره مهم نیست
+      - محدودیت اجاره ندارم
+  budget_flexibility:
+    tier: A
+    value_type: priority_or_percentage
+    aliases:
+    - انعطاف بودجه
+    - کمی بالاتر
+    - بودجه قابل انعطاف
+    high_phrases:
+    - برای گزینه بهتر کمی بالاتر می‌رم
+    - کمی بالاتر رفتن از بودجه قابل قبوله
+    - برای گزینه خیلی بهتر بودجه منعطفه
+    - اگه ارزشش رو داشته باشه بیشتر می‌دم
+    - بودجه‌م کمی انعطاف داره
+    low_phrases:
+    - بودجه خیلی سفت نیست
+    - یه مقدار انعطاف دارم
+    none_phrases:
+    - بودجه اصلاً قابل افزایش نیست
+    - بالاتر از بودجه نمی‌رم
+    - بودجه سقف قطعی داره
+    percentage_templates:
+    - تا {n} درصد بیشتر
+    - '{n} درصد بالاتر هم اوکیه'
+    - تا {n}٪ بیشتر
+  price_conversion:
+    tier: B
+    value_type: rental_terms
+    aliases:
+    - قابل تبدیل
+    - رهن کامل
+    - تبدیل رهن و اجاره
+    phrases:
+      full_deposit_preferred:
+      - رهن کامل ترجیح می‌دم
+      - رهن کامل می‌خوام
+      - اجاره نمی‌خوام رهن کامل باشه
+      convertible_required:
+      - قابل تبدیل باشه
+      - رهن و اجاره قابل تبدیل باشه
+      - امکان تبدیل داشته باشه
+      prefer_more_deposit_less_rent:
+      - ودیعه بیشتر می‌دم اجاره کمتر باشه
+      - پول پیش بیشتر اجاره کمتر
+      - رهن بیشتر و اجاره کمتر ترجیح می‌دم
+      prefer_less_deposit_more_rent:
+      - ودیعه کمتر باشه اجاره بیشتر اوکیه
+      - پول پیش کمتر می‌خوام
+      negotiable_preferred:
+      - قیمت قابل مذاکره باشه
+      - مالک راه بیاد
+      - قابل تخفیف باشه
+    evidence_policy: Usually text-derived in current data; preserve seller wording.
+  bedrooms:
+    tier: A
+    value_type: count_constraint
+    aliases:
+    - خواب
+    - اتاق خواب
+    - خوابه
+    templates:
+      exact:
+      - '{n} خواب'
+      - '{n} خوابه'
+      - خونه {n} خوابه
+      - '{n} اتاق خواب'
+      min:
+      - حداقل {n} خواب
+      - '{n} خواب به بالا'
+      - کمتر از {n} خواب نباشه
+      max:
+      - حداکثر {n} خواب
+      - بیشتر از {n} خواب لازم ندارم
+      allowed:
+      - '{n1} یا {n2} خواب'
+      - '{n1} تا {n2} خواب'
+      - '{n1} خواب هم اوکیه'
+      unset:
+      - تعداد خواب مهم نیست
+      - دوخوابه بودن مهم نیست
+      - اتاق خواب مهم نیست
+      - هر تعداد خواب اوکیه
+  bathrooms:
+    tier: C
+    value_type: count_or_feature
+    aliases:
+    - سرویس
+    - حمام
+    - سرویس بهداشتی
+    templates:
+      min:
+      - حداقل {n} سرویس
+      - حداقل {n} حمام
+      - '{n} تا سرویس لازم دارم'
+      master_bedroom:
+      - خواب مستر می‌خوام
+      - حداقل یک خواب مستر
+      - مستر داشته باشه
+      iranian_wc:
+      - سرویس ایرانی داشته باشه
+      - توالت ایرانی داشته باشه
+      western_wc:
+      - سرویس فرنگی داشته باشه
+      - توالت فرنگی داشته باشه
+      both_wc:
+      - ایرانی و فرنگی داشته باشه
+      - هر دو نوع سرویس داشته باشه
+    evidence_policy: Mostly text-derived; unknown should remain unknown.
+  area:
+    tier: A
+    value_type: numeric_constraint
+    aliases:
+    - متراژ
+    - متر
+    - مساحت
+    templates:
+      exact:
+      - '{n} متر'
+      - حدود {n} متر
+      min:
+      - حداقل {n} متر
+      - کمتر از {n} متر نباشه
+      - '{n} متر به بالا'
+      max:
+      - حداکثر {n} متر
+      - بیشتر از {n} متر لازم ندارم
+      - تا {n} متر
+      range:
+      - بین {n1} تا {n2} متر
+      - '{n1} تا {n2} متر'
+      soft_large:
+      - خونه بزرگ می‌خوام
+      - متراژ بالا بهتره
+      - جادار باشه
+      soft_small:
+      - خیلی بزرگ لازم نیست
+      - جمع و جور باشه
+      - کوچیک هم اوکیه
+  floor:
+    tier: A
+    value_type: floor_constraint
+    aliases:
+    - طبقه
+    - همکف
+    - زیرزمین
+    templates:
+      exact:
+      - طبقه {n}
+      - طبقه‌ی {n}
+      allowed:
+      - طبقه {n1} یا {n2}
+      - '{n1} یا {n2} باشه'
+      min:
+      - طبقه {n} به بالا
+      - پایین‌تر از طبقه {n} نباشه
+      max:
+      - حداکثر طبقه {n}
+      - بالاتر از طبقه {n} نباشه
+      exclude:
+      - همکف نباشه
+      - زیرزمین نباشه
+      - طبقه اول نباشه
+      - همکف و زیرزمین نه
+      prefer_upper:
+      - طبقه بالا دوست دارم
+      - طبقه‌های بالا بهتره
+      - طبقه بالا ترجیحیه
+      prefer_lower:
+      - طبقه پایین بهتره
+      - طبقات پایین ترجیح می‌دم
+  building_age:
+    tier: A
+    value_type: age_constraint
+    aliases:
+    - سن بنا
+    - نوساز
+    - قدیمی
+    - سال ساخت
+    phrases:
+      new_preferred:
+      - نوساز ترجیح می‌دم
+      - خونه جدید باشه
+      - ساختمان جدید بهتره
+      - سن بنا پایین باشه
+      new_required:
+      - حتماً نوساز باشه
+      - قدیمی اصلاً نمی‌خوام
+      - ساخت جدید لازم دارم
+      old_ok:
+      - قدیمی اشکال نداره
+      - سن بنا مهم نیست
+      - خونه قدیمی هم قبوله
+      max_age_templates:
+      - زیر {n} سال ساخت
+      - سن بنا کمتر از {n} سال
+      - بیشتر از {n} ساله نباشه
+  renovation:
+    tier: B
+    value_type: evidence_feature
+    aliases:
+    - بازسازی
+    - نوسازی
+    - بازسازی‌شده
+    - تمیز
+    positive_phrases:
+    - بازسازی شده
+    - بازسازی‌شده
+    - بازسازی کامل
+    - کامل بازسازی شده
+    - نوسازی شده
+    - تازه بازسازی
+    - نقاشی شده
+    - کابینت نو
+    - تمیز و بازسازی شده
+    user_phrases:
+      required:
+      - اگه قدیمیه حتماً بازسازی شده باشه
+      - قدیمی فقط بازسازی‌شده
+      - بازسازی کامل لازم دارم
+      preferred:
+      - بازسازی‌شده بهتره
+      - خونه قدیمی بازسازی‌شده هم خوبه
+      - تمیز و به‌روز باشه
+      ignore:
+      - بازسازی مهم نیست
+      - قدیمی و بدون بازسازی هم اوکیه
+    evidence_policy: Text-derived claim unless a structured renovated flag exists.
+  elevator:
+    tier: A
+    value_type: boolean_priority
+    aliases:
+    - آسانسور
+    - اسانسور
+    phrases:
+      required:
+      - حتماً آسانسور داشته باشه
+      - آسانسور الزامیه
+      - بدون آسانسور نمی‌خوام
+      - آسانسور لازم دارم
+      preferred:
+      - آسانسور بهتره
+      - ترجیحاً آسانسور
+      - آسانسور مهمه
+      ignore:
+      - آسانسور مهم نیست
+      - بدون آسانسور هم اوکیه
+      - آسانسور لازم نیست
+  parking:
+    tier: A/B
+    value_type: parking_constraint
+    aliases:
+    - پارکینگ
+    - جای پارک
+    phrases:
+      required:
+      - حتماً پارکینگ داشته باشه
+      - پارکینگ الزامیه
+      - پارکینگ لازم دارم
+      - بدون پارکینگ نمی‌خوام
+      preferred:
+      - پارکینگ مهمه
+      - ترجیحاً پارکینگ داشته باشه
+      - پارکینگ مزیت حساب می‌شه
+      ignore:
+      - پارکینگ مهم نیست
+      - پارکینگ لازم نیست
+      - ماشین ندارم
+      - بدون پارکینگ هم اوکیه
+      - پارکینگ برام اهمیتی نداره
+      count_templates:
+      - '{n} پارکینگ لازم دارم'
+      - '{n} تا پارکینگ'
+      - حداقل {n} پارکینگ
+      non_tandem:
+      - پارکینگ مزاحم نباشه
+      - پارکینگ غیرمزاحم
+      - پارکینگ مستقل
+      - پارکینگ اختصاصی و غیرمزاحم
+      covered:
+      - پارکینگ مسقف
+      - پارکینگ سرپوشیده
+      dedicated:
+      - پارکینگ اختصاصی
+      - پارکینگ سندی
+    evidence_policy: Presence is often structured; count/type are usually text-derived. Unknown count/type must not be treated
+      as false.
+  storage:
+    tier: A
+    value_type: boolean_priority
+    aliases:
+    - انباری
+    - انبار
+    phrases:
+      required:
+      - حتماً انباری داشته باشه
+      - انباری لازم دارم
+      - انباری الزامیه
+      preferred:
+      - انباری مهمه
+      - ترجیحاً انباری داشته باشه
+      ignore:
+      - انباری مهم نیست
+      - انباری لازم نیست
+      - بدون انباری هم اوکیه
+  balcony_outdoor:
+    tier: A/B
+    value_type: outdoor_feature
+    aliases:
+    - بالکن
+    - تراس
+    - حیاط
+    - روف گاردن
+    - روف‌گاردن
+    phrases:
+      balcony_required:
+      - بالکن لازم دارم
+      - حتماً بالکن داشته باشه
+      balcony_preferred:
+      - بالکن خوبه
+      - بالکن ترجیحیه
+      - بالکن امتیازه
+      usable_balcony:
+      - بالکن قابل استفاده می‌خوام
+      - بالکن بزرگ باشه
+      - بالکن خیلی کوچیک نباشه
+      terrace:
+      - تراس داشته باشه
+      - تراس بزرگ
+      - تراس برام مهمه
+      yard:
+      - حیاط داشته باشه
+      - حیاط اختصاصی
+      - حیاط برام مهمه
+      roof_garden:
+      - روف گاردن داشته باشه
+      - روف‌گاردن مزیت حساب بشه
+      ignore:
+      - بالکن مهم نیست
+      - فضای باز مهم نیست
+  pets:
+    tier: B/C
+    value_type: evidence_tristate
+    aliases:
+    - حیوان خانگی
+    - پت
+    - سگ
+    - گربه
+    listing_positive:
+    - حیوان خانگی مجاز
+    - پت مجاز
+    - نگهداری حیوان خانگی بلامانع
+    - حیوان خانگی مشکلی ندارد
+    - سگ و گربه مجاز
+    listing_negative:
+    - حیوان خانگی ممنوع
+    - پت ممنوع
+    - حیوان خانگی قبول نمی‌شود
+    - حیوان خانگی پذیرفته نمی‌شود
+    user_phrases:
+      required_allowed:
+      - حیوان خانگی دارم
+      - گربه دارم
+      - سگ دارم
+      - پت دارم
+      - ساختمون باید حیوان خانگی رو قبول کنه
+      - حیوان خانگی مجاز باشه
+      exclude_disallowed:
+      - اگه حیوان خانگی ممنوعه نشون نده
+      - پت ممنوع نباشه
+      ignore:
+      - حیوان خانگی برام مهم نیست
+    evidence_policy: YES/NO/UNKNOWN. Unknown must never be treated as allowed.
+  furnishing:
+    tier: B
+    value_type: categorical_evidence
+    aliases:
+    - مبله
+    - فرنیش
+    - وسایل
+    phrases:
+      furnished_required:
+      - مبله باشه
+      - کامل مبله
+      - فرنیش شده باشه
+      furnished_preferred:
+      - ترجیحاً مبله
+      - مبله بهتره
+      semi_furnished_ok:
+      - نیمه مبله هم قبوله
+      - نیمه‌فرنیش هم اوکیه
+      unfurnished_required:
+      - بدون وسایل می‌خوام
+      - غیرمبله
+      - خالی باشه
+      ignore:
+      - مبله بودن مهم نیست
+    listing_positive:
+    - مبله
+    - فول فرنیش
+    - فرنیش
+    - کامل مبله
+    listing_negative:
+    - غیرمبله
+    - بدون وسایل
+  appliances:
+    tier: B
+    value_type: feature_set
+    aliases:
+    - لوازم
+    - آشپزخانه مجهز
+    - کمد دیواری
+    items:
+      built_in_wardrobe:
+      - کمد دیواری
+      - کمد زیاد
+      - کمد سرتاسری
+      dishwasher:
+      - ماشین ظرفشویی
+      - ظرفشویی
+      washing_machine:
+      - ماشین لباسشویی
+      - لباسشویی
+      refrigerator:
+      - یخچال
+      oven:
+      - فر
+      - آون
+      hood:
+      - هود
+      stove:
+      - اجاق گاز
+      - گاز رومیزی
+    user_templates:
+    - '{item} داشته باشه'
+    - '{item} لازم دارم'
+    - '{item} مهمه'
+  heating_cooling:
+    tier: B
+    value_type: feature_set
+    aliases:
+    - گرمایش
+    - سرمایش
+    - کولر
+    - پکیج
+    - چیلر
+    - فن کویل
+    - اسپلیت
+    items:
+      package_heating:
+      - پکیج
+      radiator:
+      - رادیاتور
+      - شوفاژ
+      central_heating:
+      - گرمایش مرکزی
+      split_ac:
+      - کولر گازی
+      - اسپلیت
+      water_cooler:
+      - کولر آبی
+      fan_coil:
+      - فن کویل
+      - فن‌کویل
+      chiller:
+      - چیلر
+    user_phrases:
+      required_templates:
+      - حتماً {item} داشته باشه
+      - '{item} لازم دارم'
+      preferred_templates:
+      - '{item} ترجیح می‌دم'
+      - '{item} بهتره'
+      ignore_templates:
+      - '{item} مهم نیست'
+  natural_light:
+    tier: B
+    value_type: priority_signal
+    aliases:
+    - نور
+    - نورگیر
+    - روشن
+    - آفتاب
+    listing_positive:
+    - نورگیر
+    - نور گیر
+    - آفتابگیر
+    - آفتاب‌گیر
+    - نور طبیعی
+    - پنجره قدی
+    - پنجره‌های قدی
+    - روشن
+    - دوکله نور
+    - نور جنوب
+    - نور عالی
+    user_phrases:
+      high:
+      - نور خوب می‌خوام
+      - نورگیر باشه
+      - روشن باشه
+      - آفتاب‌گیر باشه
+      - نور خیلی مهمه
+      - خونه تاریک نباشه
+      - نور طبیعی مهمه
+      very_high:
+      - نور از همه چیز مهم‌تره
+      - نور اولویت اولمه
+      - حتماً خیلی روشن باشه
+      ignore:
+      - نور مهم نیست
+      - نورگیری برام مهم نیست
+    evidence_policy: Text-derived unless another structured light field exists.
+  quietness:
+    tier: B
+    value_type: priority_signal
+    aliases:
+    - آرامش
+    - آروم
+    - آرام
+    - دنج
+    - ساکت
+    - شلوغ
+    listing_positive:
+    - دنج
+    - آرام
+    - آروم
+    - ساکت
+    - کوچه خلوت
+    - کم تردد
+    - کم‌تردد
+    - محیط آرام
+    - کوچه آرام
+    listing_negative:
+    - بر خیابان اصلی
+    - بر خیابون اصلی
+    - کنار اتوبان
+    - پرتردد
+    - شلوغ
+    user_phrases:
+      high:
+      - محله آروم باشه
+      - آرامش مهمه
+      - کوچه دنج می‌خوام
+      - ساکت باشه
+      - شلوغ نباشه
+      - محله خلوت باشه
+      avoid_main_street:
+      - بر خیابون اصلی نباشه
+      - بر خیابان اصلی نباشه
+      - کنار اتوبان نباشه
+      ignore:
+      - آرامش محله مهم نیست
+      - شلوغی مهم نیست
+  layout:
+    tier: B
+    value_type: quality_signal
+    aliases:
+    - خوش‌نقشه
+    - خوش نقشه
+    - پرتی
+    - چیدمان
+    - سالن
+    - اتاق جادار
+    listing_positive:
+    - خوش نقشه
+    - خوش‌نقشه
+    - بدون پرتی
+    - بدون فضای پرت
+    - قابل چیدمان
+    - سالن بزرگ
+    - سالن جادار
+    - اتاق جادار
+    - پرده خور
+    - پرده‌خور
+    listing_negative:
+    - پرتی زیاد
+    - بد نقشه
+    - فضای پرت
+    user_phrases:
+      high:
+      - خوش نقشه باشه
+      - بدون پرتی باشه
+      - چیدمان خوب مهمه
+      - سالن بزرگ می‌خوام
+      - اتاق‌ها جادار باشن
+      ignore:
+      - نقشه خونه مهم نیست
+      - پرتی مهم نیست
+  building_density:
+    tier: B/C
+    value_type: count_or_signal
+    aliases:
+    - تک واحدی
+    - کم‌واحد
+    - تعداد واحد
+    - واحد در طبقه
+    listing_positive:
+    - تک واحدی
+    - تک‌واحدی
+    - دو واحدی
+    - کم واحد
+    - کم‌واحد
+    user_phrases:
+      single_unit:
+      - تک واحدی باشه
+      - هر طبقه یک واحد
+      - تک‌واحدی می‌خوام
+      max_units_per_floor_templates:
+      - در هر طبقه بیشتر از {n} واحد نباشه
+      - حداکثر {n} واحد در طبقه
+      low_density:
+      - ساختمان کم‌واحد باشه
+      - ساختمون شلوغ نمی‌خوام
+      - واحدها کم باشن
+  security:
+    tier: B/C
+    value_type: feature_set
+    aliases:
+    - امنیت
+    - نگهبانی
+    - سرایداری
+    - لابی
+    - دوربین
+    items:
+      concierge:
+      - سرایدار
+      - سرایداری
+      - لابی‌من
+      - لابی من
+      security_24h:
+      - نگهبانی ۲۴ ساعته
+      - نگهبانی شبانه روزی
+      - نگهبان
+      cctv:
+      - دوربین مداربسته
+      - دوربین مدار بسته
+      lobby:
+      - لابی
+      - لابی شیک
+      remote_door:
+      - درب ریموت
+      - درب ریموت‌دار
+    user_phrases:
+      required_templates:
+      - '{item} لازم دارم'
+      - حتماً {item} داشته باشه
+      high:
+      - امنیت ساختمان مهمه
+      - ساختمان امن می‌خوام
+  view_privacy:
+    tier: B/C
+    value_type: feature_set
+    aliases:
+    - ویو
+    - منظره
+    - مشرف
+    - دید
+    listing_positive:
+    - ویو باز
+    - دید باز
+    - منظره
+    - ویو شهر
+    - ویو کوه
+    - بدون مشرف
+    listing_negative:
+    - مشرف
+    - دید بسته
+    - پنجره رو به دیوار
+    user_phrases:
+      open_view:
+      - ویو باز داشته باشه
+      - دید باز مهمه
+      - منظره خوب می‌خوام
+      mountain_view:
+      - ویو کوه امتیازه
+      - منظره کوه
+      city_view:
+      - ویو شهر
+      - منظره شهر
+      privacy:
+      - مشرف نباشه
+      - همسایه مشرف نباشه
+      - حریم خصوصی مهمه
+      avoid_wall:
+      - پنجره رو به دیوار نباشه
+  accessibility:
+    tier: C
+    value_type: accessibility_constraints
+    aliases:
+    - سالمند
+    - ویلچر
+    - بدون پله
+    - دسترسی آسان
+    user_phrases:
+      elderly_friendly:
+      - برای سالمند می‌خوام
+      - برای مادرم می‌خوام
+      - برای پدرم می‌خوام
+      - پله زیاد مناسب نیست
+      step_free:
+      - ورودی بدون پله لازم دارم
+      - بدون پله باشه
+      - پله نخواد
+      wheelchair:
+      - ویلچر بتونه راحت وارد بشه
+      - مناسب ویلچر
+      - دسترسی ویلچر لازم دارم
+      elevator_from_parking:
+      - آسانسور از پارکینگ تا واحد بره
+      - دسترسی آسانسور از پارکینگ
+      prefer_lower_floor:
+      - طبقه پایین بهتره برای سالمند
+      - طبقات پایین ترجیحیه
+    evidence_policy: Often sparse; parser understanding does not imply listing verification.
+  transport_access:
+    tier: B/C
+    value_type: proximity_signal
+    aliases:
+    - مترو
+    - BRT
+    - بی‌آرتی
+    - دسترسی
+    - اتوبان
+    - خیابان اصلی
+    listing_positive:
+    - نزدیک مترو
+    - دسترسی به مترو
+    - بی آر تی
+    - BRT
+    - دسترسی عالی
+    - دسترسی مناسب
+    - دسترسی به بزرگراه
+    - نزدیک اتوبان
+    user_phrases:
+      near_metro:
+      - نزدیک مترو باشه
+      - پیاده تا مترو برسم
+      - مترو نزدیک باشه
+      - فاصله تا مترو کم باشه
+      metro_over_parking:
+      - مترو مهم‌تر از پارکینگه
+      - اگه نزدیک مترو باشه پارکینگ مهم نیست
+      near_brt:
+      - نزدیک BRT
+      - نزدیک بی‌آرتی
+      good_road_access:
+      - دسترسی به بزرگراه خوب باشه
+      - دسترسی به همت مهمه
+      - دسترسی خوب داشته باشه
+      avoid_main_road:
+      - بر خیابون اصلی نباشه
+      - کنار اتوبان نباشه ولی دسترسی خوب باشه
+    evidence_policy: Without POI/map services, mostly title/description evidence.
+  availability_movein:
+    tier: B
+    value_type: availability_signal
+    aliases:
+    - تخلیه
+    - تحویل
+    - کلید
+    - آماده
+    listing_positive:
+    - تخلیه
+    - تحویل فوری
+    - آماده تحویل
+    - کلید نخورده
+    - خالی
+    user_phrases:
+      immediate:
+      - همین ماه می‌خوام
+      - تحویل فوری
+      - فوری می‌خوام
+      - آماده تحویل باشه
+      vacant:
+      - تخلیه باشه
+      - خالی باشه
+      - مستاجر نداشته باشه
+      first_occupancy:
+      - کلید نخورده باشه
+      - اولین سکونت
+      - دست اول باشه
+  lease_terms:
+    tier: C
+    value_type: lease_signal
+    aliases:
+    - قرارداد
+    - مدت
+    - کوتاه مدت
+    - بلند مدت
+    user_phrases:
+      short_term:
+      - کوتاه مدت می‌خوام
+      - اجاره چند ماهه
+      - قرارداد کوتاه مدت
+      long_term:
+      - بلند مدت می‌خوام
+      - قرارداد یک ساله یا بیشتر
+      flexible_term:
+      - مدت قرارداد انعطاف‌پذیر باشه
+  building_amenities:
+    tier: B/C
+    value_type: feature_set
+    aliases:
+    - امکانات ساختمان
+    - باشگاه
+    - استخر
+    - روف گاردن
+    - سالن اجتماعات
+    items:
+      gym:
+      - باشگاه
+      - سالن ورزشی
+      pool:
+      - استخر
+      sauna:
+      - سونا
+      jacuzzi:
+      - جکوزی
+      roof_garden:
+      - روف گاردن
+      - روف‌گاردن
+      community_room:
+      - سالن اجتماعات
+    user_templates:
+    - '{item} داشته باشه'
+    - '{item} برام مهمه'
+    - '{item} مزیت حساب می‌شه'
+compound_grammar:
+  relative_priority:
+    patterns:
+    - '{A} از {B} مهم‌تره'
+    - '{A} مهم‌تر از {B} است'
+    - '{A} رو به {B} ترجیح می‌دم'
+    - اولویت {A} بیشتر از {B}ه
+    semantics: Increase priority(A) relative to B; do not necessarily make B ignored.
+  superlative_priority:
+    patterns:
+    - '{A} از همه چیز مهم‌تره'
+    - '{A} مهم‌ترین چیزه'
+    - '{A} اولویت اولمه'
+    semantics: Set A to very_high; preserve unrelated fields.
+  conditional_requirement:
+    patterns:
+    - '{A} فقط اگر {B}'
+    - اگر {A}، حتماً {B}
+    - '{A} باشه ولی {B} لازم دارم'
+    - اگه {A} باشه {B} اجباریه
+    examples:
+    - طبقه چهار به بالا فقط اگر آسانسور داشته باشه
+    - اگه ساختمون قدیمیه حتماً آسانسور داشته باشه
+    semantics: Create condition -> requirement edge; do not globalize B unless explicitly global.
+  exception:
+    patterns:
+    - '{A} بهتره ولی {B} هم قبوله'
+    - '{A} ترجیح می‌دم ولی اگر {B}، مشکلی نیست'
+    - '{A} می‌خوام؛ مگر اینکه {B}'
+    examples:
+    - نوساز بهتره ولی قدیمی بازسازی‌شده هم قبوله
+    - دو خواب می‌خوام ولی اگر خیلی بزرگه یک خواب هم قبوله
+    semantics: Primary preference plus controlled exception/fallback.
+  conditional_relaxation:
+    patterns:
+    - '{A} مهم نیست اگر {B}'
+    - اگر {B} باشه، {A} لازم نیست
+    - '{A} رو می‌تونم بیخیال شم اگه {B}'
+    examples:
+    - پارکینگ مهم نیست اگر نزدیک محل کار باشه
+    - متراژ کمتر اوکیه اگر مسیر خیلی کوتاه باشه
+    semantics: Relax A only when B holds.
+  progressive_fallback:
+    patterns:
+    - اول {A}، اگر نبود {B}
+    - اول {A} رو بگرد؛ اگه چیزی نبود {B}
+    - اگر با {A} چیزی پیدا نشد {B}
+    - '{A} ترجیحیه، بعدش {B}'
+    examples:
+    - اول فقط ونک رو بگرد؛ اگه چیزی نبود اطرافش رو هم ببین
+    - اگر با ۲۵ میلیون چیزی نبود تا ۳۰ میلیون هم برو
+    - اول نوسازها؛ اگه کم بود بازسازی‌شده‌های قدیمی رو نشون بده
+    semantics: Represent strict stage then relaxed stage; avoid flattening into one loose query.
+  cardinality:
+    patterns:
+    - حداقل {n} {feature}
+    - '{n} تا {feature} لازم دارم'
+    - '{feature} حداقل {n} تا'
+    examples:
+    - حداقل دو پارکینگ
+    - دو تا پارکینگ لازم دارم
+  exclusion:
+    patterns:
+    - '{A} نباشه'
+    - '{A} اصلاً نه'
+    - '{A} رو نشون نده'
+    - بدون {A}
+    notes: 'Interpret carefully: ''بدون پارکینگ هم اوکیه'' is relaxation, not exclusion of parking.'
+  allowed_set:
+    patterns:
+    - '{A} یا {B}'
+    - '{A} تا {B}'
+    - '{A} هم اوکیه'
+    examples:
+    - یک یا دو خوابه
+    - طبقه دوم یا سوم
+  additive_patch:
+    patterns:
+    - حالا {A} هم داشته باشه
+    - '{A} رو هم اضافه کن'
+    - ضمن اینکه {A}
+    semantics: Add A while preserving existing SearchIntent fields.
+  unset_patch:
+    patterns:
+    - '{A} دیگه مهم نیست'
+    - '{A} رو حذف کن'
+    - بیخیال {A}
+    - '{A} لازم نیست'
+    semantics: Unset or lower only A; preserve unrelated state.
+conditional_rule_catalog:
+- id: floor_requires_elevator
+  example: طبقه چهار به بالا فقط اگر آسانسور داشته باشه
+  if:
+    floor:
+      min: 4
+  then:
+    elevator:
+      required: true
+- id: old_requires_elevator
+  example: نوساز ترجیح می‌دم ولی اگر قدیمیه حتما آسانسور داشته باشه
+  preference:
+    building_age: newer
+  if:
+    building_age: older
+  then:
+    elevator:
+      required: true
+- id: old_allowed_if_renovated
+  example: قدیمی اشکال نداره اگر کامل بازسازی شده باشه
+  if:
+    building_age: older
+  then:
+    renovation:
+      required: true
+- id: parking_relaxed_if_close_to_work
+  example: پارکینگ مهم نیست اگر نزدیک محل کار باشه
+  if:
+    commute_fit: high
+  then:
+    parking:
+      priority: ignored
+  else:
+    parking:
+      priority: medium
+- id: budget_relaxed_if_close
+  example: تا ۳۰ میلیون اجاره اوکیه ولی فقط اگر خیلی نزدیک محل کار باشه
+  if:
+    commute_fit: very_high
+  then:
+    rent:
+      max: 30M
+- id: smaller_allowed_if_close
+  example: متراژ کمتر اوکیه اگر خیلی نزدیک محل کار باشه
+  if:
+    commute_fit: very_high
+  then:
+    area:
+      relax_min: true
+fallback_rule_catalog:
+- id: location_exact_then_nearby
+  example: اول فقط ونک رو بگرد، اگه چیزی نبود اطرافش رو هم ببین
+  stage_1:
+    desired_location:
+      place: ونک
+      mode: exact
+  stage_2:
+    desired_location:
+      place: ونک
+      mode: nearby
+- id: rent_expand
+  example: اگه با ۲۵ میلیون چیزی نبود تا ۳۰ میلیون هم برو
+  stage_1:
+    rent:
+      max: 25M
+  stage_2:
+    rent:
+      max: 30M
+- id: new_then_renovated_old
+  example: اول نوسازها، اگه کم بود قدیمی‌های بازسازی‌شده رو هم نشون بده
+  stage_1:
+    building_age:
+      preference: newer
+  stage_2:
+    allow:
+      building_age: older
+    require:
+      renovation: true
+precedence:
+- Explicit manual control/filter change > older natural-language state.
+- Latest explicit natural-language request > earlier request.
+- Required/hard constraint > preference when both refer to same field in same utterance.
+- Explicit negation/unset > inherited positive preference.
+- Structured listing fact > text-derived evidence for the same factual field.
+- Conditional rule must remain conditional; do not flatten requirement globally.
+- Unknown evidence does not satisfy a required text-derived criterion unless policy explicitly permits unknown.
+evidence_policy:
+  structured:
+    usage: May be used as fact in UI and hard filtering.
+    examples:
+    - area
+    - bedrooms
+    - parking presence
+    - elevator presence
+    - year
+    - neighborhood
+  text_claim:
+    usage: Use as ad evidence, not verified fact.
+    ui_language_examples:
+    - آگهی روی نورگیری خوب تأکید دارد
+    - در متن آگهی «بازسازی کامل» ذکر شده
+    - آگهی وجود نگهبانی را ذکر کرده
+  unknown:
+    rule: Unknown must not silently become false.
+    required_behavior: For a hard requirement derived only from text evidence, decide explicitly whether UNKNOWN is excluded
+      or surfaced as 'نیاز به بررسی'. Do not call it a confirmed match.
+implementation_guidance:
+  recommended_parse_order:
+  - normalize text
+  - classify NEW_SEARCH vs PATCH/CONTEXTUAL_PATCH
+  - resolve contextual references
+  - extract hard numeric/count/location constraints
+  - extract explicit required/preferred/ignored priorities
+  - extract negations/unsets
+  - extract relative priorities
+  - extract conditional and fallback grammar
+  - merge patch using precedence rules
+  - validate contradictions
+  - emit compact change diff
+  contradiction_examples:
+  - input: پارکینگ حتماً داشته باشه ولی پارکینگ مهم نیست
+    resolution: Prefer the latest/nearest explicit clause only if clause ordering is clear; otherwise mark ambiguous.
+  - input: فقط ونک باشه ولی اطراف ونک هم خوبه
+    resolution: Later nearby relaxation overrides exact if same utterance clearly sequences relaxation.
+  safe_unknown_behavior:
+  - Do not fabricate pet policy.
+  - Do not fabricate parking count/type.
+  - Do not fabricate bathroom count.
+  - Do not fabricate wheelchair accessibility.
+  - Do not fabricate exact metro walking distance.

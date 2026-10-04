@@ -1,0 +1,4448 @@
+[
+  {
+    "case": {
+      "id": "bedroom_exact_01",
+      "category": "bedrooms",
+      "text": "دوخوابه می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_min_01",
+      "category": "bedrooms",
+      "text": "حداقل سه خواب لازم دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "min",
+          "value": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "min",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_allowed_01",
+      "category": "bedrooms",
+      "text": "یک یا دو خوابه خوبه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "allowed",
+          "values": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": [
+          1,
+          2
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_unset_01",
+      "category": "bedrooms",
+      "text": "دوخوابه بودن دیگه مهم نیست",
+      "operation": "PATCH",
+      "initial_state": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "parking": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "bedrooms": {
+          "mode": "any"
+        },
+        "parking": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "any",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_min_01",
+      "category": "area",
+      "text": "حداقل ۹۰ متر باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "min": 90
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.min",
+        "value": 90,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_range_01",
+      "category": "area",
+      "text": "بین ۸۰ تا ۱۱۰ متر می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "min": 80,
+          "max": 110
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.min",
+        "value": 80,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.area.max",
+        "value": 110,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "deposit_01",
+      "category": "budget",
+      "text": "حداکثر ۸۰۰ میلیون ودیعه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "deposit": {
+          "max_toman": 800000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": 800000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "rent_01",
+      "category": "budget",
+      "text": "اجاره بیشتر از ۲۵ میلیون نشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "rent": {
+          "max_toman": 25000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 25000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "rent_patch_01",
+      "category": "budget",
+      "text": "تا ۳۰ میلیون اجاره هم اوکیه",
+      "operation": "PATCH",
+      "initial_state": {
+        "rent": {
+          "max_toman": 25000000
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      },
+      "expected": {
+        "rent": {
+          "max_toman": 30000000
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 30000000,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_exact_01",
+      "category": "location",
+      "text": "فقط ونک باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_nearby_01",
+      "category": "location",
+      "text": "نزدیک ونک می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_unset_01",
+      "category": "location",
+      "text": "محله دیگه مهم نیست",
+      "operation": "PATCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      },
+      "expected": {
+        "desired_location": null,
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "workplace_01",
+      "category": "workplace",
+      "text": "حوالی ونک کار می‌کنم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "workplace": "ونک",
+        "desired_location": null
+      }
+    },
+    "checks": [
+      {
+        "path": "context.workplace",
+        "value": "vanak",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhoods",
+        "value": [],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "workplace_commute_01",
+      "category": "workplace",
+      "text": "حوالی ونک کار می‌کنم و نزدیک محل کار بودن خیلی مهمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "workplace": "ونک",
+        "commute_priority": "very_high"
+      }
+    },
+    "checks": [
+      {
+        "path": "context.workplace",
+        "value": "vanak",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.commute",
+        "value": "very_high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "workplace_reference_exact_01",
+      "category": "workplace",
+      "text": "داخل محل کارم خانه پیدا کن",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "workplace": "ونک",
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "workplace_reference_nearby_01",
+      "category": "workplace",
+      "text": "اطراف محل کارم هم خوبه",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "workplace": "ونک",
+        "parking": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        },
+        "parking": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "workplace_unknown_01",
+      "category": "workplace",
+      "text": "نزدیک محل کارم باشه",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "workplace": null
+      },
+      "expected": {
+        "needs_clarification": "workplace"
+      }
+    },
+    "checks": [
+      {
+        "path": "clarification",
+        "value": "workplace",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "current_location_ref_01",
+      "category": "location",
+      "text": "اطرافش هم خوبه",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_exact_01",
+      "category": "floor",
+      "text": "طبقه سوم باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "mode": "exact",
+          "value": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_allowed_01",
+      "category": "floor",
+      "text": "طبقه دوم یا سوم بهتره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "mode": "allowed",
+          "values": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": [
+          2,
+          3
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_exclude_01",
+      "category": "floor",
+      "text": "همکف و زیرزمین نه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "excluded": [
+            "ground",
+            "basement"
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.excluded",
+        "value": [
+          "ground",
+          "basement"
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_max_01",
+      "category": "floor",
+      "text": "بالاتر از طبقه چهار نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "max": 4
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.mode",
+        "value": "max",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": 4,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "age_pref_01",
+      "category": "building_age",
+      "text": "نوساز ترجیح می‌دم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "preference": "newer"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "renovated_old_01",
+      "category": "renovation",
+      "text": "خونه قدیمی اشکال نداره اگه کامل بازسازی شده باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "building_age": "older"
+          },
+          "then": {
+            "renovation": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": "require_renovation_if_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "elevator_required_01",
+      "category": "elevator",
+      "text": "حتماً آسانسور داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "elevator": {
+          "required": true,
+          "priority": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "contains"
+      },
+      {
+        "path": "preferences.elevator",
+        "value": "very_high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_required_01",
+      "category": "parking",
+      "text": "پارکینگ الزامیه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "parking",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_count_01",
+      "category": "parking",
+      "text": "دو تا پارکینگ لازم دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "count_min": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_count_min",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_nontandem_01",
+      "category": "parking",
+      "text": "پارکینگ مزاحم نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "non_tandem": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_non_tandem_required",
+        "value": true,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_dedicated_01",
+      "category": "parking",
+      "text": "پارکینگ اختصاصی و غیرمزاحم می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "dedicated": "required",
+          "non_tandem": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_dedicated_required",
+        "value": true,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.parking_non_tandem_required",
+        "value": true,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "storage_required_01",
+      "category": "storage",
+      "text": "انباری حتماً داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "storage": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "storage",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_cat_01",
+      "category": "pets",
+      "text": "گربه دارم، ساختمون باید حیوان خانگی رو قبول کنه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_dog_01",
+      "category": "pets",
+      "text": "سگ کوچیک دارم، پت ممنوع نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "furnished_01",
+      "category": "furnishing",
+      "text": "مبله باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "furnishing": "furnished_required"
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.furnishing",
+        "value": "furnished",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "unfurnished_01",
+      "category": "furnishing",
+      "text": "بدون وسایل می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "furnishing": "unfurnished_required"
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.furnishing",
+        "value": "unfurnished",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "split_ac_01",
+      "category": "heating_cooling",
+      "text": "حتماً کولر گازی داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "split_ac": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.hvac_required",
+        "value": "split_ac",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "package_pref_01",
+      "category": "heating_cooling",
+      "text": "پکیج ترجیح می‌دم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "package_heating": "preferred"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.package_heating",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "light_high_01",
+      "category": "natural_light",
+      "text": "نور خوب خیلی مهمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "very_high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "very_high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "light_negative_01",
+      "category": "natural_light",
+      "text": "خونه تاریک نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "quiet_01",
+      "category": "quietness",
+      "text": "محله آروم و کوچه دنج می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "quietness": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "single_unit_01",
+      "category": "building_density",
+      "text": "ترجیحاً تک‌واحدی باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_density": {
+          "single_unit_floor": "preferred"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.single_unit",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "security_01",
+      "category": "security",
+      "text": "نگهبانی ۲۴ ساعته برام مهمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "security": {
+          "security_24h": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.security_24h",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "cctv_01",
+      "category": "security",
+      "text": "دوربین مداربسته داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "security": {
+          "cctv": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.security_required",
+        "value": "cctv",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "view_01",
+      "category": "view_privacy",
+      "text": "ویو باز داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "open_view": "preferred"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.open_view",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "privacy_01",
+      "category": "view_privacy",
+      "text": "مشرف نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "privacy": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.privacy",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "step_free_01",
+      "category": "accessibility",
+      "text": "ورودی بدون پله لازم دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "step_free": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "step_free",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "wheelchair_01",
+      "category": "accessibility",
+      "text": "ویلچر بتونه راحت وارد بشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "wheelchair": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "wheelchair",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "elevator_from_parking_01",
+      "category": "accessibility",
+      "text": "آسانسور از پارکینگ تا واحد بره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "elevator_from_parking": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "elevator_from_parking",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "metro_01",
+      "category": "transport_access",
+      "text": "پیاده تا مترو برسم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "transport_access": {
+          "near_metro": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.near_metro",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "relative_01",
+      "category": "compound",
+      "text": "نور از متراژ مهم‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "relative_priority": {
+          "higher": "natural_light",
+          "lower": "area"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.relative_priorities",
+        "value": {
+          "higher": "base:natural_light",
+          "lower": "base:area"
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "superlative_01",
+      "category": "compound",
+      "text": "رفت‌وآمد از همه چیز مهم‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "commute_priority": "very_high"
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.commute",
+        "value": "very_high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "conditional_floor_elevator_01",
+      "category": "compound",
+      "text": "طبقه چهار به بالا فقط اگر آسانسور داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "floor": {
+              "min": 4
+            }
+          },
+          "then": {
+            "elevator": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": {
+          "type": "require_elevator_if_floor_min",
+          "floor_min": 4
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "conditional_age_elevator_01",
+      "category": "compound",
+      "text": "نوساز بهتره ولی اگه قدیمیه حتما آسانسور داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "preference": "newer"
+        },
+        "conditional": {
+          "if": {
+            "building_age": "older"
+          },
+          "then": {
+            "elevator": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      },
+      {
+        "path": "logic.conditionals",
+        "value": "require_elevator_if_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "conditional_parking_commute_01",
+      "category": "compound",
+      "text": "پارکینگ مهم نیست اگر نزدیک محل کار باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "commute_fit": "high"
+          },
+          "then": {
+            "parking": {
+              "priority": "ignored"
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": "relax_preference_if_commute_close",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_location_01",
+      "category": "fallback",
+      "text": "اول فقط ونک رو بگرد، اگه چیزی نبود اطرافش رو هم ببین",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "desired_location": {
+              "place": "ونک",
+              "mode": "exact"
+            }
+          },
+          {
+            "desired_location": {
+              "place": "ونک",
+              "mode": "nearby"
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": {
+          "type": "neighborhood_scope",
+          "to": "nearby"
+        },
+        "kind": "rule_subset"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_budget_01",
+      "category": "fallback",
+      "text": "اگه با ۲۵ میلیون چیزی نبود تا ۳۰ میلیون هم برو",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "rent": {
+              "max_toman": 25000000
+            }
+          },
+          {
+            "rent": {
+              "max_toman": 30000000
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 25000000,
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": {
+          "type": "max_rent",
+          "to": 30000000
+        },
+        "kind": "rule_subset"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_age_01",
+      "category": "fallback",
+      "text": "اول نوسازها، اگه کم بود قدیمی‌های بازسازی‌شده رو هم نشون بده",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "building_age": {
+              "preference": "newer"
+            }
+          },
+          {
+            "allow": {
+              "building_age": "older"
+            },
+            "require": {
+              "renovation": true
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.construction_year_min",
+        "value": 1398,
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": "new_then_renovated_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "patch_add_01",
+      "category": "stateful",
+      "text": "حالا آسانسور هم حتما داشته باشه",
+      "operation": "PATCH",
+      "initial_state": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        },
+        "natural_light": {
+          "priority": "high"
+        },
+        "parking": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        },
+        "natural_light": {
+          "priority": "high"
+        },
+        "parking": {
+          "priority": "high"
+        },
+        "elevator": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "new_search_replace_01",
+      "category": "stateful",
+      "text": "برای خانواده سه نفره خونه دو یا سه خوابه می‌خوایم. محله آروم و خونه نسبتاً نوساز باشه. انباری و پارکینگ مهمه.",
+      "operation": "NEW_SEARCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        },
+        "rent": {
+          "max_toman": 25000000
+        }
+      },
+      "expected": {
+        "desired_location": null,
+        "bedrooms": {
+          "mode": "allowed",
+          "values": [
+            2,
+            3
+          ]
+        },
+        "quietness": {
+          "priority": "high"
+        },
+        "building_age": {
+          "preference": "newer"
+        },
+        "storage": {
+          "priority": "high"
+        },
+        "parking": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": [
+          2,
+          3
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      },
+      {
+        "path": "preferences.storage",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "force_new_01",
+      "category": "stateful",
+      "text": "جستجوی جدید: یه خونه یک‌خوابه نزدیک ولیعصر می‌خوام",
+      "operation": "NEW_SEARCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 3
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "ولیعصر",
+          "mode": "nearby"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 1
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ولیعصر"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 1,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_light_01",
+      "category": "colloquial",
+      "text": "خونه دلگیر و تاریک نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_quiet_01",
+      "category": "colloquial",
+      "text": "یه جای دنج و بی‌سروصدا می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "quietness": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_location_01",
+      "category": "colloquial",
+      "text": "نزدیکای ونک باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_exact_02",
+      "category": "location",
+      "text": "فقط خود ونک رو می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_exact_03",
+      "category": "location",
+      "text": "حتماً داخل یوسف‌آباد باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "یوسف‌آباد",
+          "mode": "exact"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "یوسف‌آباد"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_exact_04",
+      "category": "location",
+      "text": "دقیقاً عباس‌آباد باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "عباس‌آباد",
+          "mode": "exact"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "عباس‌آباد"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_nearby_02",
+      "category": "location",
+      "text": "دور و بر میرداماد خوبه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "میرداماد",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "میرداماد"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_nearby_03",
+      "category": "location",
+      "text": "یوسف‌آباد یا اطرافش",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": {
+          "place": "یوسف‌آباد",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "یوسف‌آباد"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_unset_02",
+      "category": "location",
+      "text": "هر جا باشه اوکیه، محله مهم نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": null
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "location_unset_03",
+      "category": "location",
+      "text": "محدوده رو بیخیال، بقیه چیزها مهم‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "desired_location": null
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "commute_01",
+      "category": "workplace",
+      "text": "فاصله تا محل کار کم باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "commute_priority": "high"
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.commute",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "commute_02",
+      "category": "workplace",
+      "text": "زمان رفت‌وآمد اولویت اولمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "commute_priority": "very_high"
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.commute",
+        "value": "very_high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "deposit_02",
+      "category": "budget",
+      "text": "پول پیش بیشتر از ۷۰۰ میلیون نشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "deposit": {
+          "max_toman": 700000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": 700000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "deposit_03",
+      "category": "budget",
+      "text": "سقف رهن ۱ میلیارد",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "deposit": {
+          "max_toman": 1000000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": 1000000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "deposit_04",
+      "category": "budget",
+      "text": "می‌تونم تا ۹۰۰ میلیون پیش بدم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "deposit": {
+          "max_toman": 900000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": 900000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "deposit_05",
+      "category": "budget",
+      "text": "محدودیت ودیعه ندارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "deposit": null
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": null,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "rent_02",
+      "category": "budget",
+      "text": "سقف اجاره ۲۰ میلیونه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "rent": {
+          "max_toman": 20000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 20000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "rent_04",
+      "category": "budget",
+      "text": "برای گزینه بهتر تا ۳۰ میلیون اجاره می‌دم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "rent": {
+          "max_toman": 30000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 30000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "budget_flex_04",
+      "category": "budget",
+      "text": "اصلاً بالاتر از بودجه نمی‌رم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "budget_flexibility": {
+          "priority": "ignored",
+          "hard_cap": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "targets.flexibility",
+        "value": "none",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_exact_02",
+      "category": "bedrooms",
+      "text": "یک خوابه می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 1
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 1,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_exact_03",
+      "category": "bedrooms",
+      "text": "سه‌خوابه باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_min_02",
+      "category": "bedrooms",
+      "text": "سه خواب به بالا",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "min",
+          "value": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "min",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_max_01",
+      "category": "bedrooms",
+      "text": "بیشتر از دو خواب لازم ندارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "max",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "max",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_allowed_02",
+      "category": "bedrooms",
+      "text": "دو یا سه خوابه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "allowed",
+          "values": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": [
+          2,
+          3
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_allowed_03",
+      "category": "bedrooms",
+      "text": "یک تا دو خواب اوکیه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "allowed",
+          "values": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": [
+          1,
+          2
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "bedroom_unset_02",
+      "category": "bedrooms",
+      "text": "هر تعداد اتاق خواب اوکیه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "any"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "any",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_min_02",
+      "category": "area",
+      "text": "کمتر از ۱۰۰ متر نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "min": 100
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.min",
+        "value": 100,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_min_03",
+      "category": "area",
+      "text": "۱۲۰ متر به بالا",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "min": 120
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.min",
+        "value": 120,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_max_01",
+      "category": "area",
+      "text": "حداکثر ۹۰ متر",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "max": 90
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.max",
+        "value": 90,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_range_02",
+      "category": "area",
+      "text": "۹۰ تا ۱۲۰ متری خوبه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "min": 90,
+          "max": 120
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.area.min",
+        "value": 90,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.area.max",
+        "value": 120,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "area_soft_02",
+      "category": "area",
+      "text": "جادار باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "area": {
+          "preference": "larger"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.area",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_exact_02",
+      "category": "floor",
+      "text": "طبقه دوم باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_allowed_02",
+      "category": "floor",
+      "text": "طبقه دوم یا سوم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "mode": "allowed",
+          "values": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": [
+          2,
+          3
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_exclude_03",
+      "category": "floor",
+      "text": "همکف نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "excluded": [
+            "ground"
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.excluded",
+        "value": [
+          "ground"
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "floor_exclude_04",
+      "category": "floor",
+      "text": "زیرزمین اصلاً نه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "excluded": [
+            "basement"
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.excluded",
+        "value": [
+          "basement"
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "building_age_01",
+      "category": "building_condition",
+      "text": "ساختمان تازه‌ساز می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "preference": "newer"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "building_age_02",
+      "category": "building_condition",
+      "text": "سن بنا پایین باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "preference": "newer"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "building_age_03",
+      "category": "building_condition",
+      "text": "بیشتر از ۱۰ ساله نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "max_age_years": 10
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.construction_year_min",
+        "value": 1395,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "building_age_04",
+      "category": "building_condition",
+      "text": "زیر ۵ سال ساخت",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "max_age_years": 5
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.construction_year_min",
+        "value": 1400,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "renovation_01",
+      "category": "building_condition",
+      "text": "فول بازسازی باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "renovation": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.renovation_required",
+        "value": true,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "elevator_01",
+      "category": "elevator",
+      "text": "اسانسور حتما داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "elevator": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "elevator_02",
+      "category": "elevator",
+      "text": "آسانسور بهتره ولی ضروری نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "elevator": {
+          "priority": "medium",
+          "required": false
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.elevator",
+        "value": "medium",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "absent"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_01",
+      "category": "parking",
+      "text": "جای پارک لازمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "parking",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_03",
+      "category": "parking",
+      "text": "حداقل دو جای پارک می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "count_min": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_count_min",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_04",
+      "category": "parking",
+      "text": "سه پارکینگ لازم دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "count_min": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_count_min",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_05",
+      "category": "parking",
+      "text": "پارکینگ سندی باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "dedicated": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_dedicated_required",
+        "value": true,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "parking_07",
+      "category": "parking",
+      "text": "پارکینگ اختصاصی و غیرمزاحم باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "dedicated": "required",
+          "non_tandem": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_dedicated_required",
+        "value": true,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.parking_non_tandem_required",
+        "value": true,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_01",
+      "category": "pets",
+      "text": "حیوون خونگی دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_02",
+      "category": "pets",
+      "text": "پت دارم، ساختمون باید قبول کنه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_03",
+      "category": "pets",
+      "text": "گربه دارم و پت ممنوع نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_04",
+      "category": "pets",
+      "text": "سگ دارم، حتماً حیوان خانگی مجاز باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "pets_05",
+      "category": "pets",
+      "text": "حیوان خانگی برام مهم نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "priority": "ignored"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.pet_allowed",
+        "value": "ignored",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "furnishing_01",
+      "category": "furnishing",
+      "text": "کامل مبله باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "furnishing": "furnished_required"
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.furnishing",
+        "value": "furnished",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "furnishing_02",
+      "category": "furnishing",
+      "text": "فول فرنیش می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "furnishing": "furnished_required"
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.furnishing",
+        "value": "furnished",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "furnishing_05",
+      "category": "furnishing",
+      "text": "مبله بودن مهم نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "furnishing": "ignored"
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.furnishing",
+        "value": "any",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "hvac_01",
+      "category": "equipment",
+      "text": "اسپلیت حتماً داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "split_ac": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.hvac_required",
+        "value": "split_ac",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "hvac_02",
+      "category": "equipment",
+      "text": "کولر آبی هم قبوله",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "water_cooler": "allowed"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.water_cooler",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "hvac_03",
+      "category": "equipment",
+      "text": "فن کویل ترجیح می‌دم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "fan_coil": "preferred"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.fan_coil",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "hvac_04",
+      "category": "equipment",
+      "text": "چیلر برام مهم نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "chiller": "ignored"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.chiller",
+        "value": "ignored",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "hvac_05",
+      "category": "equipment",
+      "text": "شوفاژ داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "heating_cooling": {
+          "radiator": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.hvac_required",
+        "value": "radiator",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "light_01",
+      "category": "quality",
+      "text": "خونه دلگیر نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "light_03",
+      "category": "quality",
+      "text": "آفتاب‌گیر باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "quiet_02",
+      "category": "quality",
+      "text": "یه جای بی‌سروصدا می‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "quietness": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "quiet_04",
+      "category": "quality",
+      "text": "کوچه خلوت باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "quietness": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "density_01",
+      "category": "building_features",
+      "text": "ساختمان کم‌واحد باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_density": {
+          "low_density": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.low_density",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "density_04",
+      "category": "building_features",
+      "text": "ساختمون شلوغ نمی‌خوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_density": {
+          "low_density": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.low_density",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "security_03",
+      "category": "building_features",
+      "text": "سرایدار داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "security": {
+          "concierge": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.security_required",
+        "value": "concierge",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "security_04",
+      "category": "building_features",
+      "text": "لابی‌من داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "security": {
+          "concierge": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.security_required",
+        "value": "concierge",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "security_05",
+      "category": "building_features",
+      "text": "نگهبان شبانه روزی لازم دارم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "security": {
+          "security_24h": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.security_required",
+        "value": "security_24h",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "view_02",
+      "category": "building_features",
+      "text": "دید باز مهمه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "open_view": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.open_view",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "view_03",
+      "category": "building_features",
+      "text": "ویو کوه امتیاز حساب می‌شه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "mountain_view": "preferred"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.mountain_view",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "view_05",
+      "category": "building_features",
+      "text": "حریم خصوصی مهمه، مشرف نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "privacy": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.privacy",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "accessibility_02",
+      "category": "accessibility",
+      "text": "رمپ داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "ramp": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "ramp",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "accessibility_03",
+      "category": "accessibility",
+      "text": "مناسب ویلچر باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "wheelchair": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "wheelchair",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "accessibility_04",
+      "category": "accessibility",
+      "text": "پله نخواد",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "step_free": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "step_free",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "accessibility_05",
+      "category": "accessibility",
+      "text": "آسانسور از پارکینگ مستقیم به واحد برسه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "accessibility": {
+          "elevator_from_parking": "required"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.accessibility_required",
+        "value": "elevator_from_parking",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "transport_01",
+      "category": "access_and_availability",
+      "text": "مترو دم دست باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "transport_access": {
+          "near_metro": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.near_metro",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "transport_03",
+      "category": "access_and_availability",
+      "text": "نزدیک بی‌آرتی باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "transport_access": {
+          "near_brt": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.near_brt",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_cond_01",
+      "category": "compound",
+      "text": "اگر طبقه چهار یا بالاتره حتماً آسانسور داشته باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "floor": {
+              "min": 4
+            }
+          },
+          "then": {
+            "elevator": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": {
+          "type": "require_elevator_if_floor_min",
+          "floor_min": 4
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_cond_02",
+      "category": "compound",
+      "text": "خونه قدیمی باشه مشکلی نیست به شرطی که کامل بازسازی شده باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "building_age": "older"
+          },
+          "then": {
+            "renovation": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": "require_renovation_if_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_exception_01",
+      "category": "compound",
+      "text": "نوساز بهتره اما قدیمی بازسازی‌شده هم مشکلی نیست",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_age": {
+          "preference": "newer"
+        },
+        "exception": {
+          "older_allowed_if_renovated": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.building_age",
+        "value": true,
+        "kind": "active"
+      },
+      {
+        "path": "logic.conditionals",
+        "value": "require_renovation_if_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_relax_01",
+      "category": "compound",
+      "text": "پارکینگ رو می‌تونم بیخیال شم اگه مترو خیلی نزدیک باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "transport_access.near_metro": "very_high"
+          },
+          "then": {
+            "parking": {
+              "priority": "ignored"
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": "relax_preference_if_evidence",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_priority_01",
+      "category": "compound",
+      "text": "نور رو به متراژ ترجیح می‌دم",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "relative_priority": {
+          "higher": "natural_light",
+          "lower": "area"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.relative_priorities",
+        "value": {
+          "higher": "base:natural_light",
+          "lower": "base:area"
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_priority_02",
+      "category": "compound",
+      "text": "آرامش از نزدیکی به مترو مهم‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "relative_priority": {
+          "higher": "quietness",
+          "lower": "transport_access.near_metro"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.relative_priorities",
+        "value": {
+          "higher": "base:quietness",
+          "lower": "evidence:near_metro"
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_priority_03",
+      "category": "compound",
+      "text": "پارکینگ از همه چی کم‌اهمیت‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "priority": "low"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.parking",
+        "value": "low",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "compound_add_01",
+      "category": "compound",
+      "text": "حالا انباری هم حتماً داشته باشه",
+      "operation": "PATCH",
+      "expected": {
+        "storage": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "storage",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_01",
+      "category": "fallback",
+      "text": "اول خود ونک، اگه نبود نزدیکای ونک رو هم بیار",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "desired_location": {
+              "place": "ونک",
+              "mode": "exact"
+            }
+          },
+          {
+            "desired_location": {
+              "place": "ونک",
+              "mode": "nearby"
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": {
+          "type": "neighborhood_scope",
+          "to": "nearby"
+        },
+        "kind": "rule_subset"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_02",
+      "category": "fallback",
+      "text": "اول تا ۲۰ میلیون اجاره بگرد، اگه نبود تا ۲۵ هم اوکیه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "rent": {
+              "max_toman": 20000000
+            }
+          },
+          {
+            "rent": {
+              "max_toman": 25000000
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 20000000,
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": {
+          "type": "max_rent",
+          "to": 25000000
+        },
+        "kind": "rule_subset"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_03",
+      "category": "fallback",
+      "text": "اول دوخوابه‌ها، اگه کم بود سه خوابه هم نشون بده",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "bedrooms": {
+              "mode": "exact",
+              "value": 2
+            }
+          },
+          {
+            "bedrooms": {
+              "mode": "allowed",
+              "values": [
+                2,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": {
+          "type": "bedrooms_allowed",
+          "values": [
+            2,
+            3
+          ]
+        },
+        "kind": "rule_subset"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_04",
+      "category": "fallback",
+      "text": "اول پارکینگ‌دارها، اگر چیزی نبود بدون پارکینگ هم ببین",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "parking": {
+              "required": true
+            }
+          },
+          {
+            "parking": {
+              "priority": "ignored"
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "parking",
+        "kind": "contains"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": "relax_parking",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "fallback_05",
+      "category": "fallback",
+      "text": "اول نوساز، اگه پیدا نشد قدیمی بازسازی‌شده هم بیار",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "fallback": [
+          {
+            "building_age": {
+              "preference": "newer"
+            }
+          },
+          {
+            "allow": {
+              "building_age": "older"
+            },
+            "require": {
+              "renovation": true
+            }
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.construction_year_min",
+        "value": 1398,
+        "kind": "equal"
+      },
+      {
+        "path": "logic.fallbacks",
+        "value": "new_then_renovated_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_01",
+      "category": "stateful",
+      "text": "حالا پارکینگ هم مهمه",
+      "operation": "PATCH",
+      "initial_state": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "natural_light": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "natural_light": {
+          "priority": "high"
+        },
+        "parking": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_context_01",
+      "category": "stateful",
+      "text": "نزدیکش هم خوبه",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "یوسف‌آباد",
+          "mode": "exact"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "یوسف‌آباد",
+          "mode": "nearby"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "یوسف‌آباد"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_context_02",
+      "category": "stateful",
+      "text": "خود محل کارم باشه",
+      "operation": "CONTEXTUAL_PATCH",
+      "initial_state": {
+        "workplace": "ونک",
+        "natural_light": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "workplace": "ونک",
+        "natural_light": {
+          "priority": "high"
+        },
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "context.workplace",
+        "value": "vanak",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_01",
+      "category": "colloquial",
+      "text": "یه خونه دو خواب دوروبر ونک میخام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_02",
+      "category": "colloquial",
+      "text": "اسانسور برام واجبه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "elevator": {
+          "required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_04",
+      "category": "colloquial",
+      "text": "خونه نورگير و دلباز باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "natural_light": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_05",
+      "category": "colloquial",
+      "text": "یه جای آروم و خلوت میخوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "quietness": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "preferences.quietness",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_07",
+      "category": "colloquial",
+      "text": "خونه قديمی باشه اوکیه اگه بازسازی شده",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "conditional": {
+          "if": {
+            "building_age": "older"
+          },
+          "then": {
+            "renovation": {
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "logic.conditionals",
+        "value": "require_renovation_if_old",
+        "kind": "rule_type"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_08",
+      "category": "colloquial",
+      "text": "دو تا جای پارک میخوام",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "parking": {
+          "count_min": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.parking_count_min",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "colloquial_10",
+      "category": "colloquial",
+      "text": "پت دارم، ممنوع نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "showcase_01",
+      "category": "showcase",
+      "text": "دوخوابه نزدیک ونک می‌خوام، نور خوب باشه، پارکینگ مهمه و آسانسور ترجیحیه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        },
+        "natural_light": {
+          "priority": "high"
+        },
+        "parking": {
+          "priority": "high"
+        },
+        "elevator": {
+          "priority": "medium",
+          "required": false
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "nearby",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.natural_light",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.elevator",
+        "value": "medium",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "absent"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "showcase_10",
+      "category": "showcase",
+      "text": "ویو باز خوبه ولی آرامش محله از ویو مهم‌تره",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "view_privacy": {
+          "open_view": "preferred"
+        },
+        "relative_priority": {
+          "higher": "quietness",
+          "lower": "view_privacy.open_view"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.open_view",
+        "value": true,
+        "kind": "active"
+      },
+      {
+        "path": "logic.relative_priorities",
+        "value": {
+          "higher": "base:quietness",
+          "lower": "evidence:open_view"
+        },
+        "kind": "contains"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_04",
+      "category": "stateful",
+      "text": "این بار فقط خود ونک باشه، بقیه چیزها همون",
+      "operation": "PATCH",
+      "initial_state": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "nearby"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      },
+      "expected": {
+        "desired_location": {
+          "place": "ونک",
+          "mode": "exact"
+        },
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.neighborhoods",
+        "value": [
+          "ونک"
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.neighborhood_mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "exact",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": 2,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_05",
+      "category": "stateful",
+      "text": "حالا یک یا دو خواب هم قبوله",
+      "operation": "PATCH",
+      "initial_state": {
+        "bedrooms": {
+          "mode": "exact",
+          "value": 2
+        },
+        "parking": {
+          "priority": "high"
+        }
+      },
+      "expected": {
+        "bedrooms": {
+          "mode": "allowed",
+          "values": [
+            1,
+            2
+          ]
+        },
+        "parking": {
+          "priority": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.bedrooms.mode",
+        "value": "allowed",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.bedrooms.value",
+        "value": [
+          1,
+          2
+        ],
+        "kind": "equal"
+      },
+      {
+        "path": "preferences.parking",
+        "value": "high",
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_06",
+      "category": "stateful",
+      "text": "ودیعه رو بیخیال ولی اجاره همون ۲۵ بمونه",
+      "operation": "PATCH",
+      "initial_state": {
+        "deposit": {
+          "max_toman": 800000000
+        },
+        "rent": {
+          "max_toman": 25000000
+        }
+      },
+      "expected": {
+        "deposit": null,
+        "rent": {
+          "max_toman": 25000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_deposit",
+        "value": null,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.max_rent",
+        "value": 25000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_09",
+      "category": "stateful",
+      "text": "حالا تا ۳۵ میلیون اجاره اوکیه، ولی ودیعه قبلی عوض نشه",
+      "operation": "PATCH",
+      "initial_state": {
+        "rent": {
+          "max_toman": 25000000
+        },
+        "deposit": {
+          "max_toman": 800000000
+        }
+      },
+      "expected": {
+        "rent": {
+          "max_toman": 35000000
+        },
+        "deposit": {
+          "max_toman": 800000000
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.max_rent",
+        "value": 35000000,
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.max_deposit",
+        "value": 800000000,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "stateful_patch_10",
+      "category": "stateful",
+      "text": "آسانسور رو ضروری کن ولی طبقه همون شرط قبلی بمونه",
+      "operation": "PATCH",
+      "initial_state": {
+        "elevator": {
+          "priority": "medium"
+        },
+        "floor": {
+          "max": 3
+        }
+      },
+      "expected": {
+        "elevator": {
+          "required": true
+        },
+        "floor": {
+          "max": 3
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.required_amenities",
+        "value": "elevator",
+        "kind": "contains"
+      },
+      {
+        "path": "constraints.floor.mode",
+        "value": "max",
+        "kind": "equal"
+      },
+      {
+        "path": "constraints.floor.value",
+        "value": 3,
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "negation_02",
+      "category": "negation",
+      "text": "نمی‌خوام همکف باشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "floor": {
+          "excluded": [
+            "ground"
+          ]
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.floor.excluded",
+        "value": [
+          "ground"
+        ],
+        "kind": "equal"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "negation_04",
+      "category": "negation",
+      "text": "ساختمون شلوغ نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "building_density": {
+          "low_density": "high"
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "evidence_preferences.low_density",
+        "value": true,
+        "kind": "active"
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "negation_05",
+      "category": "negation",
+      "text": "پت ممنوع نباشه",
+      "operation": "NEW_SEARCH",
+      "expected": {
+        "pets": {
+          "allowed_required": true
+        }
+      }
+    },
+    "checks": [
+      {
+        "path": "constraints.pet_policy",
+        "value": "allowed",
+        "kind": "equal"
+      }
+    ]
+  }
+]

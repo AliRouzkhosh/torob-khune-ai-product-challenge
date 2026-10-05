@@ -30,32 +30,49 @@ Interpretations are reviewable before search. Follow-up references require exist
 
 Persian input → normalization / parsing → **SearchIntent** → eligibility / evidence → deterministic ranking → explanations.
 
-This is a Django monolith. `config/` contains settings and routes; `finder/` owns the model, language layer, search state, eligibility, ranking, forms, templates and session utilities. [Architecture notes](docs/ARCHITECTURE.md) describe module boundaries. `docs/` contains language specifications and screenshots; `data/` documents optional historical-data acquisition. CSS source and compiled output are both in `finder/static/finder/`.
+This is a Django monolith. `config/` contains settings and routes; `finder/` owns the model, language layer, search state, eligibility, ranking, forms, templates and session utilities. [Architecture notes](docs/ARCHITECTURE.md) describe module boundaries. `docs/` contains language specifications and screenshots; `data/` includes the reproducible historical fixture and documents optional upstream acquisition. CSS source and compiled output are both in `finder/static/finder/`.
 
 ## Data and AI
 
-The reviewed local product used **3,000 historical, anonymized Divar real-estate records**, alongside 12 synthetic listings. This public copy excludes the working database and downloaded raw subset pending redistribution review. The included `seed_demo` command recreates the 12 synthetic listings offline. [Data instructions](data/README.md) explain optional acquisition/import for real mode; that download depends on an external archive and was not reverified during public preparation.
+This repository includes a **3,000-record historical Tehran apartment-rental snapshot** derived from the [official Divar real-estate dataset](https://huggingface.co/datasets/divarofficial/real_estate_ads). The Django fixture preserves the stored inventory used in the recorded demo, including primary keys and derived evidence, except for privacy redactions of direct contact information discovered during release review. No original contact values are published; the source/main dataset remains untouched. The working SQLite database and original Parquet acquisition are not distributed. The existing `seed_demo` command also provides 12 separate synthetic listings. See [data instructions](data/README.md) and the [data-only ODbL 1.0 notice](data/DATA_LICENSE_AND_ATTRIBUTION.md).
 
-Property images are **illustrative demo images, not the original listing photos**. Historical listings do not establish current availability or prices.
+Property images are **illustrative demo images, not the original listing photos**. Historical listings do not establish current availability, prices, seller claims or travel times.
 
 The prototype does not depend on a paid live LLM API. Natural-language interpretation uses deterministic, testable parsing/semantic rules, with curated demo scenarios. The provider boundary can later enhance/replace the language layer with an LLM while preserving deterministic eligibility and ranking.
 
 ## Running locally
 
-Verified environment: **Python 3.12.14, Django 5.2.17**, Windows PowerShell. Python 3.12 is the supported/reviewed version. From the repository root:
+Verified environment: **Python 3.12.14, Django 5.2.17**, Windows PowerShell. Python 3.12 is the supported/reviewed version. The primary video-demo path is real mode with the included fixture. Start from a fresh local database, in the repository root:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-$env:DATA_MODE = "synthetic"
+$env:DATA_MODE = "real"
 $env:DJANGO_DEBUG = "1"
 # Optional stable local key; omit to use an ephemeral key generated at startup.
 $env:DJANGO_SECRET_KEY = (& .\.venv\Scripts\python.exe -c "import secrets; print(secrets.token_urlsafe(50))")
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py loaddata data/divar_tehran_rentals_3000.fixture.json
+# Optional: enable the existing local demo-login account.
+.\.venv\Scripts\python.exe manage.py seed_demo_user
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+```
+
+The fixture loads exactly 3,000 real listings and no synthetic listings into a fresh database. `loaddata` preserves historical stored values without rerunning normalization. It updates fixture primary keys but does not remove unrelated existing records; use a fresh database for the exact inventory. The verified video flow returns **593 → 4 → 3 → 0 → 3** after the three conversational patches and the existing pet-allowance relaxation.
+
+### Lightweight synthetic alternative
+
+After creating the environment and installing requirements above, run:
+
+```powershell
+$env:DATA_MODE = "synthetic"
 .\.venv\Scripts\python.exe manage.py migrate
 .\.venv\Scripts\python.exe manage.py seed_demo
 .\.venv\Scripts\python.exe manage.py seed_demo_user
 .\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
 ```
+
+This seeds the existing 12 synthetic listings; modes keep real and synthetic inventories separate. Restart the server when changing `DATA_MODE`. The existing upstream importer remains an [optional acquisition/re-import path](data/README.md); a new upstream selection or today’s normalization may not reproduce every historical stored/derived value.
 
 Open [the local demo](http://127.0.0.1:8000/). Search is anonymous; the contact screen offers **ورود با حساب آزمایشی** after seeding the non-privileged demo user. No password is shipped; new demo accounts have an unusable password. An optional locally supplied `KHANE_DEMO_PASSWORD` is hashed when seeding. Set `ENABLE_DEMO_LOGIN=0` to disable one-click login.
 
@@ -93,7 +110,7 @@ The 320 designed language cases comprise **170 implemented/frozen, 45 partial, 7
 
 ![Mobile results](docs/screenshots/results-mobile.jpg)
 
-These are preserved release QA captures using the private historical dataset. Home/detail/comparison show the final polish checkpoint; the mobile capture includes the subsequent release cleanup. They are illustrative and do not imply that the real dataset ships here.
+These are preserved release QA captures using the historical demo inventory. Home/detail/comparison show the final polish checkpoint; the mobile capture includes the subsequent release cleanup. The included privacy-safe fixture reconstructs that inventory with contact-data redactions.
 
 ## Project limitations
 
@@ -101,4 +118,4 @@ Historical data, incomplete seller evidence, approximate straight-line proximity
 
 ## License and attribution
 
-No project-wide license has been selected; do not infer MIT or other redistribution rights. Font licensing is preserved in `finder/static/finder/fonts/LICENSE.txt`. Dataset provenance and unresolved data/asset rights are documented in [data notes](data/README.md) and [attribution notes](docs/ATTRIBUTION.md).
+No project-wide license has been selected; do not infer MIT or other redistribution rights. Font licensing is preserved in `finder/static/finder/fonts/LICENSE.txt`. The included data artifact is separately identified under ODbL 1.0 in the [data-only license and attribution notice](data/DATA_LICENSE_AND_ATTRIBUTION.md); this does not license the Django application code under ODbL. Dataset provenance and unresolved asset rights are documented in [data notes](data/README.md) and [attribution notes](docs/ATTRIBUTION.md).
